@@ -1,0 +1,42 @@
+.showcase {
+  background: url('../images/Vector.png') center center fixed;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  align-items: center;
+}
+
+.showcase-text {
+  h1 {
+    color: #fff;
+    font-size: 3rem;
+  }
+}
+
+.showcase-img {
+  img {
+    width: 90%;
+  }
+}
+
+.showcase {
+  .form-group {
+    width: 60%;
+    margin-top: 1rem;
+    display: flex;
+    justify-content: space-between;    
+  }
+}
+
+
+.form-control {
+  width: 70%;
+  padding: 14px 25px;
+  border: none; 
+  outline: none;
+  font-family: $font-stack;
+  transition: all 0.4s; 
+
+  &:focus {
+    box-shadow: 0 3px 7px rgba(0, 0, 0, 0.3);
+  }
+}

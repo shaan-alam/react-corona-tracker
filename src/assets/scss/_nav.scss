@@ -1,0 +1,85 @@
+nav {
+  padding: 1rem 2rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1),
+              0 2px 3px rgba(0, 0, 0, 0.0992),
+              0 3px 3px rgba(0, 0, 0, 0.05);
+
+
+  .container {
+    display: flex;
+    align-items: center;
+  
+    
+    .brand {
+      flex: 3;
+    }
+
+    ul {
+      flex: 1;
+
+    }
+
+  }
+
+}
+
+
+nav .container ul {
+  display: flex;
+  justify-content: space-around;
+  list-style: none;
+
+  li a {
+    transition: all 0.4s;
+    @include tablet {
+      color: #fff;
+    }
+    color: #222;
+    text-decoration: none;
+
+    &:hover {
+      color: $primary-color;
+    }
+  }
+
+  & {
+    @include tablet {
+      z-index: 999;
+      position: fixed;
+      top: 0;
+      right: -100%;
+      flex-direction: column;
+      height: 100vh;
+      width: 100%;
+      align-items: center;
+      transition: all 0.4s;
+    }
+  }
+  &.active-nav-menu {
+    @include tablet {
+      top: 0;
+      right: 0;
+      background: rgba(0, 0, 0, 0.8);
+  
+      li a {
+        font-size: 1.3rem;
+      }
+    }
+  }
+  
+}
+
+
+.nav-logo {
+  width: 30%;
+}
+
+.nav-toggle {
+  @include tablet {
+    display: block;
+  }
+  display: none;
+  cursor: 'pointer';
+  position: relative;
+  z-index: 1000;
+}

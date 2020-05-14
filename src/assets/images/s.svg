@@ -1,0 +1,4 @@
+<svg width="1920" height="1080" viewBox="0 0 1920 1080" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect width="1920" height="1080" fill="white"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M0 800L80 693.333C160 586.667 320 373.333 480 426.667C640 480 800 800 960 960C1120 1120 1280 1120 1440 960C1600 800 1760 480 1840 320L1920 160V0H1840C1760 0 1600 0 1440 0C1280 0 1120 0 960 0C800 0 640 0 480 0C320 0 160 0 80 0H0V800Z" fill="#4ACC8A"/>
+</svg>

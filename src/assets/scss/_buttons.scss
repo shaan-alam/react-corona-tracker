@@ -1,0 +1,18 @@
+.primary-btn {
+  padding: 14px 24px;
+  color: $primary-color;
+  background-color: #fff;
+  text-decoration: none;
+  outline: none;
+  border: none;
+  font-family: $font-stack;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: all 0.4s;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+
+  &:hover {
+    box-shadow: 0 3px 7px rgba(0, 0, 0, 0.3);
+  }
+}

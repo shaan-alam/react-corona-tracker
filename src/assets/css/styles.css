@@ -275,6 +275,12 @@ nav .container ul li a:hover {
   border-radius: 10px;
 }
 
+@media screen and (max-width: 768px) {
+  .cards-info-grid .card {
+    margin-top: 2rem;
+  }
+}
+
 .cards-info-grid .card h3 {
   color: #000;
 }
@@ -472,7 +478,7 @@ nav .container ul li a:hover {
   .card {
     height: 80%;
     width: 80%;
-    margin: 0 auto;
+    margin: 2rem auto;
   }
 }
 

@@ -42,27 +42,32 @@ nav .container ul {
     }
   }
 
-  & {
-    @include tablet {
-      z-index: 999;
-      position: fixed;
-      top: 0;
-      right: -100%;
-      flex-direction: column;
-      height: 100vh;
-      width: 100%;
-      align-items: center;
-      transition: all 0.4s;
-    }
+
+  @include tablet {    
+    z-index: 10000;
+    position: fixed;
+    top: 0;
+    right: -100%;
+    flex-direction: column;
+    height: 100vh;
+    width: 50%;
+    align-items: center;
+    transition: all 0.4s;
   }
+  
+
   &.active-nav-menu {
     @include tablet {
-      top: 0;
       right: 0;
-      background: rgba(0, 0, 0, 0.8);
+      background: $white-color;
+      box-shadow: 2px 0 10px rgba(0, 0, 0, 0.4);
   
       li a {
+        position: relative;
         font-size: 1.3rem;
+        color: $primary-color;
+        animation: fadeIn 1s;
+        font-weight: bold;
       }
     }
   }
@@ -80,6 +85,7 @@ nav .container ul {
   }
   display: none;
   cursor: 'pointer';
-  position: relative;
+  position: fixed;
+  right: 10%;
   z-index: 1000;
 }

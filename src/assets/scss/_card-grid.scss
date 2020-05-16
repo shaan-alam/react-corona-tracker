@@ -1,0 +1,56 @@
+.card-grid-section {
+  
+  @include tablet {
+    min-height: 125vh;
+  }
+  @include mobile-xl {
+    min-height: 260vh;
+  }
+
+  h1 {
+    font-size: 300%;
+    text-align: center;
+    margin-bottom: 100px;
+    color: $primary-color;
+    font-family: $font-stack;
+  }
+}
+
+
+.card-grid { 
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-column-gap: 4rem;
+  
+  @include tablet {
+    grid-template-columns: repeat(3, 0.3fr);
+  }
+
+  @include mobile-xl {
+    display: block;
+  }
+}
+
+
+.card {
+  padding: 1rem;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.09);
+  text-align: center;
+  line-height: 1.5;
+
+  @include mobile-xl {
+    height: 80%;
+    width: 80%;
+    margin: 0 auto;
+  }
+
+
+  h3 {
+    color: $primary-color;
+    margin: 20px 0;
+  }
+
+  img {
+    width: 70%;
+  }
+}

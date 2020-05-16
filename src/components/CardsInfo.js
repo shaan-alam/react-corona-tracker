@@ -1,6 +1,7 @@
 import React from "react";
 import Card from './Card';
 
+
 function CardsInfo (props) {
   return (
     <div className="cards-info-grid">

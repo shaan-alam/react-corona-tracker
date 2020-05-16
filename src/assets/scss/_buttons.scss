@@ -9,10 +9,9 @@
   font-weight: 600;
   font-size: 1rem;
   transition: all 0.4s;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
   cursor: pointer;
 
   &:hover {
-    box-shadow: 0 3px 7px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
   }
 }

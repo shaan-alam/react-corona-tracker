@@ -1,0 +1,79 @@
+.affected-countries-section {
+  min-height: 100vh;
+
+  @include tablet {
+    min-height: 250vh;
+  }
+}
+
+.affected-countries-section .container > h1 {
+  text-align: center;
+  margin: 100px 0;
+  color: $primary-color;
+  font-size: 300%;
+
+  @include mobile-l {
+    font-size: 200%;
+  }
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 1rem;
+
+
+  @include tablet {
+    display: flex;
+    flex-wrap: wrap;
+  }
+}
+
+.grid {
+  .country-data {
+
+    @include tablet {
+      flex: 1 1 50%;
+      margin: 1rem;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.098);
+    }
+
+    position: relative;
+    padding: 1rem;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+
+    h3 {
+      font-weight: 500;
+      color: #333;
+    }
+
+    h5 {
+      font-weight: 300;
+      margin-top: 0.7rem;
+    }
+  }
+
+  .country-data:nth-child(1) {
+    grid-row: 1/5;
+
+    h3 {
+      font-size: 3rem;
+      color: $primary-color;
+    }
+
+    h5 {
+      color: #333;
+      font-weight: 500;
+    }
+  }
+}
+
+.country-count {
+  color: $white-color;
+  background-color: $secondary-color;
+  border-radius: 100%;
+  padding: 10px;
+  position: absolute;
+  top: -10px;
+  right: -10px;
+}

@@ -3,27 +3,50 @@
   display: grid;
   grid-template-columns: 1fr 2fr;
   align-items: center;
+
+
+  @include tablet {
+    display: block;
+    text-align: center;
+  }
 }
 
 .showcase-text {
+  @include tablet {
+    width: 80%;
+    margin: 0 auto;
+  }
   h1 {
     color: #fff;
     font-size: 3rem;
+
+    @include tablet {
+      font-size: 1.5rem;
+    }
   }
 }
 
 .showcase-img {
   img {
     width: 90%;
+
+    @include tablet {
+      width: 50%;
+    }
   }
 }
 
 .showcase {
-  .form-group {
+  .form-group {    
     width: 60%;
     margin-top: 1rem;
     display: flex;
     justify-content: space-between;    
+  
+    @include tablet {
+      width: 80%;
+      margin: 1rem auto;
+    }
   }
 }
 
@@ -37,6 +60,6 @@
   transition: all 0.4s; 
 
   &:focus {
-    box-shadow: 0 3px 7px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
   }
 }

@@ -1,21 +1,40 @@
 import React from "react";
+import AffectedCountry from "./AffectedCountry";
+import Fade from 'react-reveal/Fade';
 
-class topAffectedCountries extends React.Component {
+class TopAffectedCountries extends React.Component {
   constructor(props) {
     super(props);
     this.state = {};
   }
 
+  static getStateFromProps(props) {
+    return { topAffectedCountries: props.topAffectedCountries };
+  }
+
+  generate = () => Math.floor(Math.random() * 1677215).toString(16);
+
   render() {
+    let count = 1;
     return (
-      <section className="affected-countries">
+      <section className="affected-countries-section">
         <div className="container">
-          <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Blanditiis beatae facilis, animi optio corrupti, praesentium libero esse debitis iste non dolorum quaerat numquam consequuntur, saepe tenetur aspernatur natus soluta dicta.</p>
+          <Fade>
+            <h1>World's most affected countries</h1>
+          </Fade>
+          <div className="grid">
+            {this.props.topAffectedCountries.map(affectedCountry => (
+              <AffectedCountry
+                id={count++}
+                key={this.generate()}
+                affectedCountry={affectedCountry}
+              />
+            ))}
+          </div>
         </div>
-    </section>
-    )
-    
+      </section>
+    );
   }
 }
 
-export default topAffectedCountries;
+export default TopAffectedCountries;

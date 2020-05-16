@@ -1,0 +1,20 @@
+footer {
+
+  @include tablet {
+    padding: 1rem;
+  }
+
+  width: 100%;
+  text-align: center;
+  padding: 2rem 4rem;
+  background: $primary-color;
+  color: $white-color;
+
+  p {
+    font-size: 1.2rem;
+  }
+}
+
+.social-icons > a {
+  margin-right: 30px;
+}

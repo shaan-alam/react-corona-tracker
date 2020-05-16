@@ -1,8 +1,23 @@
+.graph-section {
+  min-height: 100vh;
+  height: 130vh;
+  display: flex;
+  flex-direction: column;
+
+  @include tablet {
+    height: 150vh;
+  }
+
+  @include tablet-sm {
+    height: 200vh;
+  }
+}
+
+
 .chart-container {
-  height: 70vh;
   padding-bottom: 1rem;
   width: 80%;
-  margin: 0 auto
+  margin: auto;
 }
 
 .chart-container > * {

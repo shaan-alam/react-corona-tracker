@@ -1,6 +1,7 @@
 import React from "react";
 import CardsInfo from "./CardsInfo";
 import { Line } from "react-chartjs-2";
+import Fade from "react-reveal/Fade";
 
 class Graph extends React.Component {
   constructor(props) {
@@ -13,7 +14,6 @@ class Graph extends React.Component {
       ],
       currentCountryData: {},
     };
-   
   }
 
   static getDerivedStateFromProps(props) {
@@ -59,20 +59,22 @@ class Graph extends React.Component {
         <div className="container">
           <CardsInfo cards={this.state.cards} />
         </div>
-        <div className="chart-container">
-          <Line
-            data={this.state.data}
-            options={{
-              responsive: true,
-              maintainAspectRatio: false,
-              title: {
-                display: true,
-                text: `${this.props.name}`,
-                fontSize: 25,
-              },
-            }}
-          />
-        </div>
+        <Fade up delay={400}>
+          <div className="chart-container">
+            <Line
+              data={this.state.data}
+              options={{
+                responsive: true,
+                maintainAspectRatio: false,
+                title: {
+                  display: true,
+                  text: `${this.props.name}`,
+                  fontSize: 25,
+                },
+              }}
+            />
+          </div>
+        </Fade>
       </section>
     );
   }

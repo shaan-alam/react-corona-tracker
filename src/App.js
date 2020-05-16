@@ -3,7 +3,9 @@ import API from "./assets/js/API.json";
 import Nav from "./components/Nav";
 import Showcase from "./components/Showcase";
 import Graph from "./components/Graph";
-import TopAffectedCountries from './components/TopAffectedCountries';
+import TopAffectedCountries from "./components/TopAffectedCountries";
+import Cards from "./components/Cards";
+import Footer from "./components/Footer";
 import "./assets/css/styles.css";
 
 class App extends React.Component {
@@ -17,33 +19,40 @@ class App extends React.Component {
         name: "",
         data: [],
       },
-      topAffectedCountries: []
+      topAffectedCountries: [],
     };
   }
 
-  componentDidMount () {
-    const country = this.getCountryAnalytics('India');
-
-    this.setState({ currentCountry: { name: 'India', data: country } });
-
-    this.getTopAffectedCountries();
+  componentDidMount() {
+    fetch("https://pomber.github.io/covid19/timeseries.json")
+      .then(res => res.json())
+      .then(res => {
+        this.setState({ API: res });
+        const country = this.getCountryAnalytics("India");
+        this.setState({ currentCountry: { name: "India", data: country } });
+        this.getTopAffectedCountries();
+      });
   }
 
   getTopAffectedCountries = () => {
     const countries = Object.keys(API);
 
-    let allCountryData = [], data, confirmed;
+    let allCountryData = [],
+      data,
+      confirmed;
 
     countries.forEach(country => {
       data = this.getCountryAnalytics(country);
       confirmed = data[data.length - 1].confirmed;
-      allCountryData.push({ 'name': country, 'confirmed': confirmed });
+      allCountryData.push({ name: country, confirmed: confirmed });
     });
 
-    const topAffectedCountries =  allCountryData.sort((a, b) => b.confirmed - a.confirmed).slice(0, 10);
+    const topAffectedCountries = allCountryData
+      .sort((a, b) => b.confirmed - a.confirmed)
+      .slice(0, 10);
 
     this.setState({ topAffectedCountries });
-  }
+  };
 
   toggleNavMenu = () => {
     this.setState({ navMenu: { shown: !this.state.navMenu.shown } });
@@ -79,7 +88,7 @@ class App extends React.Component {
       "December",
     ];
 
-    const { [countryName]: country } = API;
+    const { [countryName]: country } = this.state.API;
 
     let monthlyData = [];
 
@@ -96,7 +105,6 @@ class App extends React.Component {
   };
 
   render() {
-    
     return (
       <main>
         <Nav navMenu={this.state.navMenu} toggleNavMenu={this.toggleNavMenu} />
@@ -105,7 +113,11 @@ class App extends React.Component {
           data={this.state.currentCountry.data}
           name={this.state.currentCountry.name}
         />
-        <TopAffectedCountries />
+        <TopAffectedCountries
+          topAffectedCountries={this.state.topAffectedCountries}
+        />
+        <Cards />
+        <Footer />
       </main>
     );
   }

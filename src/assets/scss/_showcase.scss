@@ -1,5 +1,5 @@
 .showcase {
-  background: url('../images/Vector.png') center center fixed;
+  background: url('../images/Vector.png') fixed;
   display: grid;
   grid-template-columns: 1fr 2fr;
   align-items: center;
@@ -45,8 +45,10 @@
   
     @include tablet {
       width: 80%;
-      margin: 1rem auto;
+      margin: 1rem auto;     
+      display: block;
     }
+
   }
 }
 
@@ -62,5 +64,9 @@
 
   &:focus {
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  }
+
+  @include tablet {
+    width: 100%;
   }
 }

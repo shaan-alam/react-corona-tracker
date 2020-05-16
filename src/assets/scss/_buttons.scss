@@ -11,8 +11,13 @@
   transition: all 0.4s;
   cursor: pointer;
   border-radius: 2rem;
+  display: block;
 
   &:hover {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  }
+
+  @include tablet {
+    margin-top: 1rem;
   }
 }

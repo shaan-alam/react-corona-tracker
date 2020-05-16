@@ -139,7 +139,7 @@ nav .container ul li a:hover {
 }
 
 .showcase {
-  background: url("../images/Vector.png") center center fixed;
+  background: url("../images/Vector.png") fixed;
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: 1fr 2fr;
@@ -199,6 +199,7 @@ nav .container ul li a:hover {
   .showcase .form-group {
     width: 80%;
     margin: 1rem auto;
+    display: block;
   }
 }
 
@@ -218,6 +219,12 @@ nav .container ul li a:hover {
           box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
 }
 
+@media screen and (max-width: 768px) {
+  .form-control {
+    width: 100%;
+  }
+}
+
 .primary-btn {
   padding: 14px 24px;
   color: #20B560;
@@ -232,11 +239,18 @@ nav .container ul li a:hover {
   transition: all 0.4s;
   cursor: pointer;
   border-radius: 2rem;
+  display: block;
 }
 
 .primary-btn:hover {
   -webkit-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
           box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+@media screen and (max-width: 768px) {
+  .primary-btn {
+    margin-top: 1rem;
+  }
 }
 
 .cards-info-grid {

@@ -88,7 +88,7 @@ class App extends React.Component {
       "December",
     ];
 
-    const { [countryName]: country } = this.state.API;
+    const { [countryName]: country } = this.state.API || API;
 
     let monthlyData = [];
 

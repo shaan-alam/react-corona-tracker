@@ -16,10 +16,7 @@ function Cards() {
             <div className="card">
               <img src={Sanitizer} alt="card-img" />
               <h3>Wash hands often!</h3>
-              <p>
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Optio
-                reprehenderit id in, cumque explicabo et?
-              </p>
+              <p>Wash your hands properly with a good sanitizer!</p>
             </div>
           </Flip>
           <Flip left delay={300}>
@@ -27,8 +24,8 @@ function Cards() {
               <img src={Sneezing} alt="card-img" />
               <h3>Cover your mouth while sneezing!</h3>
               <p>
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Optio
-                reprehenderit id in, cumque explicabo et?
+                It's always good to cover your mouth while sneezing. You'll
+                always thank yourself for that!
               </p>
             </div>
           </Flip>
@@ -37,8 +34,7 @@ function Cards() {
               <img src={Homework} alt="card-img" />
               <h3>Stay at home, Work at home!</h3>
               <p>
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Optio
-                reprehenderit id in, cumque explicabo et?
+                This pandemic time, be at home, work at home, & learn at home!
               </p>
             </div>
           </Flip>

@@ -5,7 +5,7 @@ import Reveal from "react-reveal/Reveal";
 
 function Showcase(props) {
   return (
-    <section className="showcase">
+    <section id="showcase" className="showcase">
       <Reveal left>
         <div className="showcase-img">
           <img src={Mask} alt="Showcaseimage" />

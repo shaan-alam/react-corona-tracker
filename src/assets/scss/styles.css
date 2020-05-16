@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Maven+Pro:wght@400;500;600;669;700;800;900&display=swap");
 .container {
   width: 80%;
   margin: 0 auto;
@@ -14,6 +15,7 @@ section {
   padding: 0;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+  font-family: "Maven Pro", sans-serif;
 }
 
 html, body {
@@ -70,7 +72,7 @@ nav .container ul li a:hover {
 }
 @media screen and (max-width: 768px) {
   nav .container ul {
-    z-index: 999;
+    z-index: 1000;
     position: fixed;
     top: 0;
     right: -100%;
@@ -111,9 +113,8 @@ nav .container ul li a:hover {
 .nav-toggle {
   display: none;
   cursor: "pointer";
-  position: fixed;
-  right: 10%;
-  z-index: 1000;
+  position: relative;
+  z-index: 2000;
 }
 @media screen and (max-width: 768px) {
   .nav-toggle {
@@ -217,14 +218,22 @@ nav .container ul li a:hover {
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 1rem;
 }
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 840px) {
+  .cards-info-grid {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+}
+@media screen and (max-width: 600px) {
   .cards-info-grid {
     display: block;
-    margin-top: 50px;
   }
 }
 
-.card {
+.cards-info-grid .card {
   padding: 2rem 4rem;
   -webkit-transform: scale(0.9);
           transform: scale(0.9);
@@ -235,7 +244,7 @@ nav .container ul li a:hover {
   transition: all 0.4s;
   position: relative;
 }
-.card::before {
+.cards-info-grid .card::before {
   content: "";
   position: absolute;
   bottom: 0;
@@ -249,13 +258,16 @@ nav .container ul li a:hover {
   transition: all 0.4s;
   background-color: #20B560;
 }
-.card:hover {
+.cards-info-grid .card:hover {
   -webkit-transform: scale(0.98);
           transform: scale(0.98);
 }
-.card:hover::before {
+.cards-info-grid .card:hover::before {
   -webkit-transform: scaleX(1);
           transform: scaleX(1);
+}
+.cards-info-grid .card h3 {
+  color: #000;
 }
 
 .card-title {
@@ -264,7 +276,8 @@ nav .container ul li a:hover {
 }
 
 .graph-section {
-  height: 150vh;
+  min-height: 100vh;
+  height: 130vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -273,12 +286,22 @@ nav .container ul li a:hover {
       -ms-flex-direction: column;
           flex-direction: column;
 }
+@media screen and (max-width: 768px) {
+  .graph-section {
+    height: 150vh;
+  }
+}
+@media screen and (max-width: 600px) {
+  .graph-section {
+    height: 200vh;
+  }
+}
 
 .chart-container {
-  height: 50%;
   padding-bottom: 1rem;
   width: 80%;
-  margin: 0 auto;
+  margin: auto;
+  min-height: 50%;
 }
 
 .chart-container > * {
@@ -286,23 +309,23 @@ nav .container ul li a:hover {
   width: 100%;
 }
 
-.affected-countries {
-  margin-top: 100px;
+.affected-countries-section {
+  min-height: 100vh;
 }
-@media screen and (max-width: 900px) {
-  .affected-countries {
-    marign-top: 10rem;
+@media screen and (max-width: 768px) {
+  .affected-countries-section {
+    min-height: 250vh;
   }
 }
 
-.affected-countries .container > h1 {
+.affected-countries-section .container > h1 {
   text-align: center;
   margin: 100px 0;
   color: #20B560;
   font-size: 300%;
 }
 @media screen and (max-width: 425px) {
-  .affected-countries .container > h1 {
+  .affected-countries-section .container > h1 {
     font-size: 200%;
   }
 }
@@ -366,6 +389,82 @@ nav .container ul li a:hover {
   position: absolute;
   top: -10px;
   right: -10px;
+}
+
+@media screen and (max-width: 768px) {
+  .card-grid-section {
+    min-height: 125vh;
+  }
+}
+@media screen and (max-width: 550px) {
+  .card-grid-section {
+    min-height: 260vh;
+  }
+}
+.card-grid-section h1 {
+  font-size: 300%;
+  text-align: center;
+  margin-bottom: 100px;
+  color: #20B560;
+  font-family: "Maven Pro", sans-serif;
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-column-gap: 4rem;
+}
+@media screen and (max-width: 768px) {
+  .card-grid {
+    grid-template-columns: repeat(3, 0.3fr);
+  }
+}
+@media screen and (max-width: 550px) {
+  .card-grid {
+    display: block;
+  }
+}
+
+.card {
+  padding: 1rem;
+  -webkit-box-shadow: 0 10px 10px rgba(0, 0, 0, 0.09);
+          box-shadow: 0 10px 10px rgba(0, 0, 0, 0.09);
+  text-align: center;
+  line-height: 1.5;
+}
+@media screen and (max-width: 550px) {
+  .card {
+    height: 80%;
+    width: 80%;
+    margin: 0 auto;
+  }
+}
+.card h3 {
+  color: #20B560;
+  margin: 20px 0;
+}
+.card img {
+  width: 70%;
+}
+
+footer {
+  width: 100%;
+  text-align: center;
+  padding: 2rem 4rem;
+  background: #20B560;
+  color: #fff;
+}
+@media screen and (max-width: 768px) {
+  footer {
+    padding: 1rem;
+  }
+}
+footer p {
+  font-size: 1.2rem;
+}
+
+.social-icons > a {
+  margin-right: 30px;
 }
 
 @-webkit-keyframes fadeIn {

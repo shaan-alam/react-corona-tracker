@@ -11,6 +11,11 @@ nav {
   
     
     .brand {
+      img {
+        @include mobile-xl {
+          width: 50%;
+        }
+      }
       flex: 3;
     }
 
@@ -44,7 +49,7 @@ nav .container ul {
 
 
   @include tablet {    
-    z-index: 10000;
+    z-index: 1000;
     position: fixed;
     top: 0;
     right: -100%;
@@ -61,7 +66,7 @@ nav .container ul {
       right: 0;
       background: $white-color;
       box-shadow: 2px 0 10px rgba(0, 0, 0, 0.4);
-  
+      
       li a {
         position: relative;
         font-size: 1.3rem;
@@ -87,5 +92,5 @@ nav .container ul {
   cursor: 'pointer';
   position: fixed;
   right: 10%;
-  z-index: 1000;
+  z-index: 2000;
 }

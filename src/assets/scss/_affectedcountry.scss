@@ -32,6 +32,8 @@
 .grid {
   .country-data {
 
+    border-radius: 10px;
+
     @include tablet {
       flex: 1 1 50%;
       margin: 1rem;
@@ -74,6 +76,7 @@
   border-radius: 100%;
   padding: 10px;
   position: absolute;
+  font-weight: bold;
   top: -10px;
   right: -10px;
 }

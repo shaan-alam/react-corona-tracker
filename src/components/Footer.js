@@ -14,10 +14,10 @@ function Footer() {
         </p>
         <div className="social-icons">
           <h4>Connect with me on </h4>
-          <a href="#!">
+          <a href="https://www.facebook.com/shaan.alam.1004/">
             <LogoFacebook color="#ddd" fontSize="40px" />
           </a>
-          <a href="#!">
+          <a href="https://www.instagram.com/shaancodes/">
             <LogoInstagram color="#ddd" fontSize="40px" />
           </a>
         </div>

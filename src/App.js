@@ -1,6 +1,5 @@
 import React from "react";
 import Nav from "./components/Nav";
-import API from './assets/js/API.json';
 import Showcase from "./components/Showcase";
 import Graph from "./components/Graph";
 import TopAffectedCountries from "./components/TopAffectedCountries";
@@ -22,23 +21,20 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-    /* fetch("https://pomber.github.io/covid19/timeseries.json")
+    fetch("https://pomber.github.io/covid19/timeseries.json")
       .then(res => res.json())
       .then(res => {
-        this.setState({ API: API });
+        this.setState({ API: res });
         const country = this.getCountryAnalytics("India");
         this.setState({ currentCountry: { name: "India", data: country } });
         this.getTopAffectedCountries();
-      }); */
+      });
       
-      this.setState({ API: API });
-      const country = this.getCountryAnalytics("India");
-      this.setState({ currentCountry: { name: "India", data: country } });
-      this.getTopAffectedCountries();
+      
   }
 
   getTopAffectedCountries = () => {
-    const countries = Object.keys(API);
+    const countries = Object.keys(this.state.API);
 
     let allCountryData = [],
       data,
@@ -88,7 +84,7 @@ class App extends React.Component {
       "December",
     ];
 
-    const { [countryName]: country } = this.state.API || API;
+    const { [countryName]: country } = this.state.API;
 
     let monthlyData = [];
 

@@ -1,28 +1,26 @@
 {
   "files": {
-    "main.css": "/react-corona-tracker/static/css/main.6add1540.chunk.css",
-    "main.js": "/react-corona-tracker/static/js/main.387fbffb.chunk.js",
-    "main.js.map": "/react-corona-tracker/static/js/main.387fbffb.chunk.js.map",
+    "main.css": "/react-corona-tracker/static/css/main.bffba671.chunk.css",
+    "main.js": "/react-corona-tracker/static/js/main.5c811cc8.chunk.js",
+    "main.js.map": "/react-corona-tracker/static/js/main.5c811cc8.chunk.js.map",
     "runtime-main.js": "/react-corona-tracker/static/js/runtime-main.da18908e.js",
     "runtime-main.js.map": "/react-corona-tracker/static/js/runtime-main.da18908e.js.map",
-    "static/js/2.887639e4.chunk.js": "/react-corona-tracker/static/js/2.887639e4.chunk.js",
-    "static/js/2.887639e4.chunk.js.map": "/react-corona-tracker/static/js/2.887639e4.chunk.js.map",
+    "static/js/2.a375a29e.chunk.js": "/react-corona-tracker/static/js/2.a375a29e.chunk.js",
+    "static/js/2.a375a29e.chunk.js.map": "/react-corona-tracker/static/js/2.a375a29e.chunk.js.map",
     "index.html": "/react-corona-tracker/index.html",
-    "precache-manifest.8e4c6020fcbdf7221c48a3a083e44a23.js": "/react-corona-tracker/precache-manifest.8e4c6020fcbdf7221c48a3a083e44a23.js",
+    "precache-manifest.386d4f6479abf525388bc1aab56a6e98.js": "/react-corona-tracker/precache-manifest.386d4f6479abf525388bc1aab56a6e98.js",
     "service-worker.js": "/react-corona-tracker/service-worker.js",
-    "static/css/main.6add1540.chunk.css.map": "/react-corona-tracker/static/css/main.6add1540.chunk.css.map",
-    "static/js/2.887639e4.chunk.js.LICENSE.txt": "/react-corona-tracker/static/js/2.887639e4.chunk.js.LICENSE.txt",
-    "static/media/Logo.png": "/react-corona-tracker/static/media/Logo.172fbdff.png",
+    "static/css/main.bffba671.chunk.css.map": "/react-corona-tracker/static/css/main.bffba671.chunk.css.map",
+    "static/js/2.a375a29e.chunk.js.LICENSE.txt": "/react-corona-tracker/static/js/2.a375a29e.chunk.js.LICENSE.txt",
     "static/media/Mask.png": "/react-corona-tracker/static/media/Mask.a801879c.png",
-    "static/media/styles.css": "/react-corona-tracker/static/media/Vector.36c88e2d.png",
     "static/media/homework.png": "/react-corona-tracker/static/media/homework.392a1213.png",
     "static/media/sanitizer.png": "/react-corona-tracker/static/media/sanitizer.d291ff8f.png",
     "static/media/sneezing.png": "/react-corona-tracker/static/media/sneezing.c6e42e36.png"
   },
   "entrypoints": [
     "static/js/runtime-main.da18908e.js",
-    "static/js/2.887639e4.chunk.js",
-    "static/css/main.6add1540.chunk.css",
-    "static/js/main.387fbffb.chunk.js"
+    "static/js/2.a375a29e.chunk.js",
+    "static/css/main.bffba671.chunk.css",
+    "static/js/main.5c811cc8.chunk.js"
   ]
 }

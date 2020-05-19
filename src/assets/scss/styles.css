@@ -15,7 +15,7 @@ section {
   padding: 0;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  font-family: "Maven Pro", sans-serif;
+  font-family: Maven Pro, sans-serif;
 }
 
 html, body {
@@ -25,7 +25,7 @@ html, body {
 }
 
 nav {
-  padding: 1rem 2rem;
+  padding: 2rem 4rem;
   -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1), 0 2px 3px rgba(0, 0, 0, 0.0992), 0 3px 3px rgba(0, 0, 0, 0.05);
           box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1), 0 2px 3px rgba(0, 0, 0, 0.0992), 0 3px 3px rgba(0, 0, 0, 0.05);
 }
@@ -42,6 +42,14 @@ nav .container .brand {
       -ms-flex: 3;
           flex: 3;
 }
+nav .container .brand a {
+  font-size: 1.5rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #732ec1;
+  font-weight: bold;
+}
 nav .container ul {
   -webkit-box-flex: 1;
       -ms-flex: 1;
@@ -57,6 +65,9 @@ nav .container ul {
   list-style: none;
 }
 nav .container ul li a {
+  letter-spacing: 1px;
+  font-weight: 600;
+  text-transform: uppercase;
   -webkit-transition: all 0.4s;
   transition: all 0.4s;
   color: #222;
@@ -68,7 +79,7 @@ nav .container ul li a {
   }
 }
 nav .container ul li a:hover {
-  color: #20B560;
+  color: #732ec1;
 }
 @media screen and (max-width: 768px) {
   nav .container ul {
@@ -99,7 +110,7 @@ nav .container ul li a:hover {
   nav .container ul.active-nav-menu li a {
     position: relative;
     font-size: 1.3rem;
-    color: #20B560;
+    color: #732ec1;
     -webkit-animation: fadeIn 1s;
             animation: fadeIn 1s;
     font-weight: bold;
@@ -113,7 +124,8 @@ nav .container ul li a:hover {
 .nav-toggle {
   display: none;
   cursor: "pointer";
-  position: relative;
+  position: fixed;
+  right: 10%;
   z-index: 2000;
 }
 @media screen and (max-width: 768px) {
@@ -123,7 +135,6 @@ nav .container ul li a:hover {
 }
 
 .showcase {
-  background: url("../images/Vector.png") center center fixed;
   display: grid;
   grid-template-columns: 1fr 2fr;
   -webkit-box-align: center;
@@ -144,7 +155,7 @@ nav .container ul li a:hover {
   }
 }
 .showcase-text h1 {
-  color: #fff;
+  color: #333;
   font-size: 3rem;
 }
 @media screen and (max-width: 768px) {
@@ -176,27 +187,41 @@ nav .container ul li a:hover {
   .showcase .form-group {
     width: 80%;
     margin: 1rem auto;
+    display: block;
   }
 }
 
 .form-control {
+  font-family: "Maven Pro", sans-serif;
+  -webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
   width: 70%;
-  padding: 14px 25px;
-  border: none;
+  padding: 15px 25px;
   outline: none;
   font-family: "Maven Pro", sans-serif;
   -webkit-transition: all 0.4s;
   transition: all 0.4s;
+  border: none;
 }
 .form-control:focus {
-  -webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
-          box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  -webkit-box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12);
+          box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12);
+}
+@media screen and (max-width: 768px) {
+  .form-control {
+    width: 100%;
+  }
+}
+
+.showcase-title {
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  color: #732ec1;
 }
 
 .primary-btn {
   padding: 14px 24px;
-  color: #20B560;
-  background-color: #fff;
+  color: #fff;
+  background-color: #732ec1;
   text-decoration: none;
   outline: none;
   border: none;
@@ -206,10 +231,42 @@ nav .container ul li a:hover {
   -webkit-transition: all 0.4s;
   transition: all 0.4s;
   cursor: pointer;
-}
-.primary-btn:hover {
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  display: block;
   -webkit-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
           box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  position: relative;
+}
+.primary-btn::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: -5;
+  height: 10px;
+  -webkit-transform: translate(10px, -5%);
+          transform: translate(10px, -5%);
+  opacity: 0;
+  -webkit-transition: all 0.4s;
+  transition: all 0.4s;
+  width: 10px;
+  background: #fff;
+}
+.primary-btn:hover {
+  padding-left: 40px;
+  padding-right: 10px;
+  text-align: right;
+  -webkit-box-shadow: 0 10px 20px rgba(0, 0, 0, 0.13);
+          box-shadow: 0 10px 20px rgba(0, 0, 0, 0.13);
+}
+.primary-btn:hover::before {
+  left: 10px;
+  opacity: 1;
+}
+@media screen and (max-width: 768px) {
+  .primary-btn {
+    margin-top: 1rem;
+  }
 }
 
 .cards-info-grid {
@@ -235,8 +292,6 @@ nav .container ul li a:hover {
 
 .cards-info-grid .card {
   padding: 2rem 4rem;
-  -webkit-transform: scale(0.9);
-          transform: scale(0.9);
   text-align: center;
   -webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
           box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
@@ -244,35 +299,20 @@ nav .container ul li a:hover {
   transition: all 0.4s;
   position: relative;
 }
-.cards-info-grid .card::before {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  height: 2px;
-  border-radius: 15px;
-  width: 100%;
-  -webkit-transform: scaleX(0);
-          transform: scaleX(0);
-  -webkit-transition: all 0.4s;
-  transition: all 0.4s;
-  background-color: #20B560;
-}
-.cards-info-grid .card:hover {
-  -webkit-transform: scale(0.98);
-          transform: scale(0.98);
-}
-.cards-info-grid .card:hover::before {
-  -webkit-transform: scaleX(1);
-          transform: scaleX(1);
+@media screen and (max-width: 768px) {
+  .cards-info-grid .card {
+    margin-top: 2rem;
+  }
 }
 .cards-info-grid .card h3 {
   color: #000;
 }
 
 .card-title {
-  color: #20B560;
+  color: #732ec1;
   font-family: "Maven Pro", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 2px;
 }
 
 .graph-section {
@@ -321,8 +361,10 @@ nav .container ul li a:hover {
 .affected-countries-section .container > h1 {
   text-align: center;
   margin: 100px 0;
-  color: #20B560;
-  font-size: 300%;
+  color: #732ec1;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 200%;
 }
 @media screen and (max-width: 425px) {
   .affected-countries-section .container > h1 {
@@ -374,7 +416,7 @@ nav .container ul li a:hover {
 }
 .grid .country-data:nth-child(1) h3 {
   font-size: 3rem;
-  color: #20B560;
+  color: #732ec1;
 }
 .grid .country-data:nth-child(1) h5 {
   color: #333;
@@ -383,10 +425,10 @@ nav .container ul li a:hover {
 
 .country-count {
   color: #fff;
-  background-color: #4ACC8A;
-  border-radius: 100%;
+  background-color: #732ec1;
   padding: 10px;
   position: absolute;
+  font-weight: bold;
   top: -10px;
   right: -10px;
 }
@@ -405,7 +447,7 @@ nav .container ul li a:hover {
   font-size: 300%;
   text-align: center;
   margin-bottom: 100px;
-  color: #20B560;
+  color: #732ec1;
   font-family: "Maven Pro", sans-serif;
 }
 
@@ -426,21 +468,22 @@ nav .container ul li a:hover {
 }
 
 .card {
-  padding: 1rem;
-  -webkit-box-shadow: 0 10px 10px rgba(0, 0, 0, 0.09);
-          box-shadow: 0 10px 10px rgba(0, 0, 0, 0.09);
+  padding: 2rem;
+  -webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.08), 5px 0px 10px rgba(0, 0, 0, 0.05), 0 20px 20px rgba(0, 0, 0, 0.009);
+          box-shadow: 0 5px 10px rgba(0, 0, 0, 0.08), 5px 0px 10px rgba(0, 0, 0, 0.05), 0 20px 20px rgba(0, 0, 0, 0.009);
   text-align: center;
   line-height: 1.5;
+  color: #666;
 }
 @media screen and (max-width: 550px) {
   .card {
     height: 80%;
     width: 80%;
-    margin: 0 auto;
+    margin: 2rem auto;
   }
 }
 .card h3 {
-  color: #20B560;
+  color: #732ec1;
   margin: 20px 0;
 }
 .card img {
@@ -448,23 +491,32 @@ nav .container ul li a:hover {
 }
 
 footer {
-  width: 100%;
-  text-align: center;
   padding: 2rem 4rem;
-  background: #20B560;
+  background: #732ec1;
+  -webkit-box-shadow: 0 -1px 10px rgba(0, 0, 0, 0.099);
+          box-shadow: 0 -1px 10px rgba(0, 0, 0, 0.099);
+}
+footer h1 {
   color: #fff;
+  font-weight: 200;
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-top: 10px;
 }
 @media screen and (max-width: 768px) {
-  footer {
-    padding: 1rem;
+  footer h1 {
+    font-size: 0.7rem;
   }
 }
-footer p {
-  font-size: 1.2rem;
+footer span {
+  color: #ff3600;
 }
-
-.social-icons > a {
-  margin-right: 30px;
+footer .social-icons {
+  margin: 10px 0;
+}
+footer .social-icons > * {
+  margin-right: 20px;
 }
 
 @-webkit-keyframes fadeIn {
@@ -486,6 +538,11 @@ footer p {
   100% {
     opacity: 1;
     left: 0px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .container {
+    width: 90%;
   }
 }
 /*# sourceMappingURL=styles.css.map */

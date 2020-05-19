@@ -1,6 +1,10 @@
 .affected-countries-section {
   min-height: 100vh;
 
+  @include mobile-l {
+    min-height: 180vh;
+  }
+
   @include tablet {
     min-height: 250vh;
   }
@@ -10,10 +14,12 @@
   text-align: center;
   margin: 100px 0;
   color: $primary-color;
-  font-size: 300%;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 200%;
 
   @include mobile-l {
-    font-size: 200%;
+    font-size: 150%;
   }
 }
 
@@ -32,7 +38,6 @@
 .grid {
   .country-data {
 
-    border-radius: 10px;
 
     @include tablet {
       flex: 1 1 50%;
@@ -72,8 +77,7 @@
 
 .country-count {
   color: $white-color;
-  background-color: $secondary-color;
-  border-radius: 100%;
+  background-color: $primary-color;
   padding: 10px;
   position: absolute;
   font-weight: bold;

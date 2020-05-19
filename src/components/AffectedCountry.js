@@ -3,7 +3,7 @@ import Flip from "react-reveal/Flip";
 
 function AffectedCountry(props) {
   return (
-    <Flip left delay={400}>
+    <Flip left delay={400 + props.id * 100}>
       <div className="country-data">
         <span className="country-count">#{props.id}</span>
         <h3>{props.affectedCountry.name}</h3>

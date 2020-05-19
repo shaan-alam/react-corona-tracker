@@ -6,20 +6,15 @@ function Footer() {
   return (
     <footer>
       <div className="container">
-        <p>
-          Made by Shaan Alam with{" "}
-          <span role="img" aria-label="emoji">
-            💓
-          </span>
-        </p>
+        <h1>Made by Shaan Alam with <span role="img" aria-label="emoji">❤</span></h1>
+        <h1>You can follow me here...</h1>
         <div className="social-icons">
-          <h4>Connect with me on </h4>
-          <a href="https://www.facebook.com/shaan.alam.1004/">
-            <LogoFacebook color="#ddd" fontSize="40px" />
+          <a href="#!">
+            <LogoFacebook fontSize="40px" color="#fff"/>            
           </a>
-          <a href="https://www.instagram.com/shaancodes/">
-            <LogoInstagram color="#ddd" fontSize="40px" />
-          </a>
+          <a href="#!">
+            <LogoInstagram fontSize="40px" color="#fff"/>
+          </a>          
         </div>
       </div>
     </footer>

@@ -1,6 +1,6 @@
 import React from "react";
-import API from "./assets/js/API.json";
 import Nav from "./components/Nav";
+import API from './assets/js/API.json';
 import Showcase from "./components/Showcase";
 import Graph from "./components/Graph";
 import TopAffectedCountries from "./components/TopAffectedCountries";
@@ -12,9 +12,7 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      navMenu: {
-        shown: false,
-      },
+      API: '',
       currentCountry: {
         name: "",
         data: [],
@@ -24,14 +22,19 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-    fetch("https://pomber.github.io/covid19/timeseries.json")
+    /* fetch("https://pomber.github.io/covid19/timeseries.json")
       .then(res => res.json())
       .then(res => {
-        this.setState({ API: res });
+        this.setState({ API: API });
         const country = this.getCountryAnalytics("India");
         this.setState({ currentCountry: { name: "India", data: country } });
         this.getTopAffectedCountries();
-      });
+      }); */
+      
+      this.setState({ API: API });
+      const country = this.getCountryAnalytics("India");
+      this.setState({ currentCountry: { name: "India", data: country } });
+      this.getTopAffectedCountries();
   }
 
   getTopAffectedCountries = () => {
@@ -54,10 +57,7 @@ class App extends React.Component {
     this.setState({ topAffectedCountries });
   };
 
-  toggleNavMenu = () => {
-    this.setState({ navMenu: { shown: !this.state.navMenu.shown } });
-  };
-
+  
   onFormSubmit = e => {
     if (e.target.previousElementSibling.value !== "") {
       const { currentCountry } = this.state;

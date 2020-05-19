@@ -1,5 +1,5 @@
 nav {
-  padding: 1rem 2rem;
+  padding: 2rem 4rem;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1),
               0 2px 3px rgba(0, 0, 0, 0.0992),
               0 3px 3px rgba(0, 0, 0, 0.05);
@@ -11,11 +11,19 @@ nav {
   
     
     .brand {
-      img {
-        @include mobile-xl {
-          width: 50%;
+      a {
+        font-size: 1.5rem;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        text-decoration: none;
+        color: $primary-color;
+        font-weight: bold;
+
+        @include mobile-l {
+          font-size: 1.2rem;
         }
       }
+
       flex: 3;
     }
 
@@ -30,15 +38,24 @@ nav {
 
 
 nav .container ul {
+  .close {
+    display: none;
+  }
+
   display: flex;
   justify-content: space-around;
   list-style: none;
 
   li a {
+    letter-spacing: 1px;
+    font-weight: 600;
+    text-transform: uppercase;
     transition: all 0.4s;
+
     @include tablet {
       color: #fff;
     }
+
     color: #222;
     text-decoration: none;
 
@@ -53,23 +70,35 @@ nav .container ul {
     position: fixed;
     top: 0;
     right: -100%;
-    flex-direction: column;
+    display: block;
     height: 100vh;
     width: 50%;
-    align-items: center;
     transition: all 0.4s;
   }
   
 
   &.active-nav-menu {
     @include tablet {
+
+      .close {
+        display: block;
+        text-align: right;
+        font-size: 2rem;
+      }
+
       right: 0;
       background: $white-color;
       box-shadow: 2px 0 10px rgba(0, 0, 0, 0.4);
       
-      li a {
+      li {
+        display: block;
+        padding: 1rem;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.0992);
+      }
+
+      li a {        
+        font-size: 0.91rem;
         position: relative;
-        font-size: 1.3rem;
         color: $primary-color;
         animation: fadeIn 1s;
         font-weight: bold;
@@ -92,5 +121,5 @@ nav .container ul {
   cursor: 'pointer';
   position: fixed;
   right: 10%;
-  z-index: 2000;
+  z-index: 999;
 }

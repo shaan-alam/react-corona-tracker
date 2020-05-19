@@ -1,5 +1,4 @@
 .showcase {
-  background: url('../images/Vector.png') fixed;
   display: grid;
   grid-template-columns: 1fr 2fr;
   align-items: center;
@@ -17,7 +16,7 @@
     margin: 0 auto;
   }
   h1 {
-    color: #fff;
+    color: #333;
     font-size: 3rem;
 
     @include tablet {
@@ -45,7 +44,7 @@
   
     @include tablet {
       width: 80%;
-      margin: 1rem auto;     
+      margin: 2rem auto;     
       display: block;
     }
 
@@ -54,19 +53,26 @@
 
 
 .form-control {
-  border-radius: 2rem;
+  font-family: 'Maven Pro', sans-serif;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
   width: 70%;
-  padding: 14px 25px;
-  border: none; 
+  padding: 15px 25px;
   outline: none;
   font-family: $font-stack;
   transition: all 0.4s; 
-
+  border: none;
+  
   &:focus {
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12);
   }
 
   @include tablet {
     width: 100%;
   }
+}
+
+
+.showcase-title {
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  color: $primary-color;
 }

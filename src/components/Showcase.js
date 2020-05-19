@@ -15,7 +15,7 @@ function Showcase(props) {
         <div className="showcase-text">
           <h1>
             Track any county's status with our <br />
-            CORONA-TRACKER.
+            <span className="showcase-title">CORONA-TRACKER.</span>
           </h1>
           <div className="form-group">
             <input

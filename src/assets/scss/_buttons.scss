@@ -1,7 +1,7 @@
 .primary-btn {
   padding: 14px 24px;
-  color: $primary-color;
-  background-color: #fff;
+  color: $white-color;
+  background-color: $primary-color;
   text-decoration: none;
   outline: none;
   border: none;
@@ -10,11 +10,36 @@
   font-size: 1rem;
   transition: all 0.4s;
   cursor: pointer;
-  border-radius: 2rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
   display: block;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  position: relative;
+
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: -5;
+    height: 10px;
+    transform: translate(10px, -5%);
+    opacity: 0;
+    transition: all 0.4s;
+    width: 10px;
+    background: #fff;
+  }
 
   &:hover {
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    padding-left: 40px;
+    padding-right: 10px;
+    text-align: right;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.13);
+  }
+
+  &:hover::before {
+    left: 10px;
+    opacity: 1;
   }
 
   @include tablet {

@@ -21,7 +21,6 @@
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
   transition: all 0.4s;
   position: relative;
-  border-radius: 10px;
 
   @include tablet {
     margin-top: 2rem;
@@ -36,4 +35,6 @@
 .card-title { 
   color: $primary-color;
   font-family: $font-stack;
+  text-transform: uppercase;
+  letter-spacing: 2px;
 }

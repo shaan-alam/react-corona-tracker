@@ -23,7 +23,7 @@ class Nav extends React.Component {
             </a>
           </div>
           <ul className={className}>
-            <li class="close"><IosClose onClick={this.toggleNavMenu} color="rgb(115, 46, 193)" fontSize="40px" /></li>
+            <li className="close"><IosClose onClick={this.toggleNavMenu} color="rgb(115, 46, 193)" fontSize="40px" /></li>
             <li>
               <AnchorLink offset={() => 100} href="#showcase">
                 Home

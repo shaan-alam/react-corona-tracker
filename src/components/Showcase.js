@@ -3,7 +3,9 @@ import Mask from "../assets/images/Mask.png";
 import AnchorLink from "react-anchor-link-smooth-scroll";
 import Reveal from "react-reveal/Reveal";
 
-function Showcase(props) {
+import { Context } from "../DataContext";
+
+function Showcase() {
   return (
     <section id="showcase" className="showcase">
       <Reveal left>
@@ -23,14 +25,18 @@ function Showcase(props) {
               className="form-control"
               placeholder="Country Name...."
             />
-            <AnchorLink
-              offset={() => 100}
-              href="#graph-section"
-              onClick={props.onFormSubmit}
-              className="primary-btn"
-            >
-              Search
-            </AnchorLink>
+            <Context.Consumer>
+              {value => (
+                <AnchorLink
+                  offset={() => 100}
+                  href="#graph-section"
+                  onClick={value.onFormSubmit}
+                  className="primary-btn"
+                >
+                  Search
+                </AnchorLink>
+              )}
+            </Context.Consumer>
           </div>
         </div>
       </Reveal>

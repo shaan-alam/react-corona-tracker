@@ -7,6 +7,7 @@ export class ContextProvider extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      API: [],
       currentCountry: {
         name: "",
         data: [],
@@ -16,9 +17,14 @@ export class ContextProvider extends React.Component {
   }
 
   componentDidMount() {
-    const country = this.getCountryAnalytics("India");
-    this.setState({ currentCountry: { name: "India", data: country } });
-    this.getTopAffectedCountries();
+    fetch("https://pomber.github.io/covid19/timeseries.json")
+      .then((res) => res.json())
+      .then((res) => {
+        this.setState({ API: res });
+        const country = this.getCountryAnalytics("India");
+        this.setState({ currentCountry: { name: "India", data: country } });
+        this.getTopAffectedCountries();
+      });
   }
 
   getTopAffectedCountries = () => {
@@ -28,7 +34,7 @@ export class ContextProvider extends React.Component {
       data,
       confirmed;
 
-    countries.forEach(country => {
+    countries.forEach((country) => {
       data = this.getCountryAnalytics(country);
       confirmed = data[data.length - 1].confirmed;
       allCountryData.push({ name: country, confirmed: confirmed });
@@ -39,10 +45,9 @@ export class ContextProvider extends React.Component {
       .slice(0, 10);
 
     this.setState({ topAffectedCountries });
-
   };
 
-  onFormSubmit = e => {
+  onFormSubmit = (e) => {
     if (e.target.previousElementSibling.value !== "") {
       const { currentCountry } = this.state;
 
@@ -55,7 +60,7 @@ export class ContextProvider extends React.Component {
     }
   };
 
-  getCountryAnalytics = countryName => {
+  getCountryAnalytics = (countryName) => {
     const monthNames = [
       "",
       "Jan",
@@ -72,12 +77,12 @@ export class ContextProvider extends React.Component {
       "December",
     ];
 
-    const { [countryName]: country } = API;
+    const { [countryName]: country } = this.state.API;
 
     let monthlyData = [];
 
     for (let i = 1; i <= new Date().getMonth() + 1; i++) {
-      let monthData = country.filter(c => +c.date.split("-")[1] === i);
+      let monthData = country.filter((c) => +c.date.split("-")[1] === i);
 
       let lastDateData = monthData[monthData.length - 1];
       lastDateData["month"] = monthNames[i];
@@ -89,20 +94,16 @@ export class ContextProvider extends React.Component {
   };
 
   render() {
-
-    
     let value = {
       state: this.state,
       getCountryAnalytics: this.getCountryAnalytics,
       onFormSubmit: this.onFormSubmit,
       getTopAffectedCountries: this.getTopAffectedCountries,
-    }
-    
+    };
+
     console.log(value);
     return (
-      <Context.Provider value={ value }>
-        {this.props.children}
-      </Context.Provider>
+      <Context.Provider value={value}>{this.props.children}</Context.Provider>
     );
   }
 }

@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/react-corona-tracker/static/css/main.bffba671.chunk.css",
-    "main.js": "/react-corona-tracker/static/js/main.1145bc81.chunk.js",
-    "main.js.map": "/react-corona-tracker/static/js/main.1145bc81.chunk.js.map",
+    "main.css": "/react-corona-tracker/static/css/main.ecd16a12.chunk.css",
+    "main.js": "/react-corona-tracker/static/js/main.bf076aaa.chunk.js",
+    "main.js.map": "/react-corona-tracker/static/js/main.bf076aaa.chunk.js.map",
     "runtime-main.js": "/react-corona-tracker/static/js/runtime-main.da18908e.js",
     "runtime-main.js.map": "/react-corona-tracker/static/js/runtime-main.da18908e.js.map",
-    "static/js/2.b1e4cdef.chunk.js": "/react-corona-tracker/static/js/2.b1e4cdef.chunk.js",
-    "static/js/2.b1e4cdef.chunk.js.map": "/react-corona-tracker/static/js/2.b1e4cdef.chunk.js.map",
+    "static/js/2.a10a50f5.chunk.js": "/react-corona-tracker/static/js/2.a10a50f5.chunk.js",
+    "static/js/2.a10a50f5.chunk.js.map": "/react-corona-tracker/static/js/2.a10a50f5.chunk.js.map",
     "index.html": "/react-corona-tracker/index.html",
-    "precache-manifest.a60e0d966719155d0d9619635cf33d24.js": "/react-corona-tracker/precache-manifest.a60e0d966719155d0d9619635cf33d24.js",
+    "precache-manifest.82252edd425983679d7593062481de77.js": "/react-corona-tracker/precache-manifest.82252edd425983679d7593062481de77.js",
     "service-worker.js": "/react-corona-tracker/service-worker.js",
-    "static/css/main.bffba671.chunk.css.map": "/react-corona-tracker/static/css/main.bffba671.chunk.css.map",
-    "static/js/2.b1e4cdef.chunk.js.LICENSE.txt": "/react-corona-tracker/static/js/2.b1e4cdef.chunk.js.LICENSE.txt",
+    "static/css/main.ecd16a12.chunk.css.map": "/react-corona-tracker/static/css/main.ecd16a12.chunk.css.map",
+    "static/js/2.a10a50f5.chunk.js.LICENSE.txt": "/react-corona-tracker/static/js/2.a10a50f5.chunk.js.LICENSE.txt",
     "static/media/Mask.png": "/react-corona-tracker/static/media/Mask.a801879c.png",
     "static/media/homework.png": "/react-corona-tracker/static/media/homework.392a1213.png",
     "static/media/sanitizer.png": "/react-corona-tracker/static/media/sanitizer.d291ff8f.png",
@@ -19,8 +19,8 @@
   },
   "entrypoints": [
     "static/js/runtime-main.da18908e.js",
-    "static/js/2.b1e4cdef.chunk.js",
-    "static/css/main.bffba671.chunk.css",
-    "static/js/main.1145bc81.chunk.js"
+    "static/js/2.a10a50f5.chunk.js",
+    "static/css/main.ecd16a12.chunk.css",
+    "static/js/main.bf076aaa.chunk.js"
   ]
 }

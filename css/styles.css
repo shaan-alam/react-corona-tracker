@@ -13,8 +13,7 @@ section {
 * {
   margin: 0;
   padding: 0;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   font-family: Maven Pro, sans-serif;
 }
 
@@ -26,23 +25,16 @@ html, body {
 
 nav {
   padding: 2rem 4rem;
-  -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1), 0 2px 3px rgba(0, 0, 0, 0.0992), 0 3px 3px rgba(0, 0, 0, 0.05);
-          box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1), 0 2px 3px rgba(0, 0, 0, 0.0992), 0 3px 3px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1), 0 2px 3px rgba(0, 0, 0, 0.0992), 0 3px 3px rgba(0, 0, 0, 0.05);
 }
 
 nav .container {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  align-items: center;
 }
 
 nav .container .brand {
-  -webkit-box-flex: 3;
-      -ms-flex: 3;
-          flex: 3;
+  flex: 3;
 }
 
 nav .container .brand a {
@@ -61,17 +53,12 @@ nav .container .brand a {
 }
 
 nav .container ul {
-  -webkit-box-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
+  flex: 1;
 }
 
 nav .container ul {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
+  justify-content: space-around;
   list-style: none;
 }
 
@@ -83,7 +70,6 @@ nav .container ul li a {
   letter-spacing: 1px;
   font-weight: 600;
   text-transform: uppercase;
-  -webkit-transition: all 0.4s;
   transition: all 0.4s;
   color: #222;
   text-decoration: none;
@@ -108,7 +94,6 @@ nav .container ul li a:hover {
     display: block;
     height: 100vh;
     width: 50%;
-    -webkit-transition: all 0.4s;
     transition: all 0.4s;
   }
 }
@@ -117,8 +102,7 @@ nav .container ul li a:hover {
   nav .container ul.active-nav-menu {
     right: 0;
     background: #fff;
-    -webkit-box-shadow: 2px 0 10px rgba(0, 0, 0, 0.4);
-            box-shadow: 2px 0 10px rgba(0, 0, 0, 0.4);
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.4);
   }
   nav .container ul.active-nav-menu .close {
     display: block;
@@ -134,8 +118,7 @@ nav .container ul li a:hover {
     font-size: 0.91rem;
     position: relative;
     color: #732ec1;
-    -webkit-animation: fadeIn 1s;
-            animation: fadeIn 1s;
+    animation: fadeIn 1s;
     font-weight: bold;
   }
 }
@@ -159,13 +142,9 @@ nav .container ul li a:hover {
 }
 
 .showcase {
-  display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 1fr 2fr;
-      grid-template-columns: 1fr 2fr;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  grid-template-columns: 1fr 2fr;
+  align-items: center;
 }
 
 @media screen and (max-width: 768px) {
@@ -206,12 +185,8 @@ nav .container ul li a:hover {
 .showcase .form-group {
   width: 60%;
   margin-top: 1rem;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  justify-content: space-between;
 }
 
 @media screen and (max-width: 768px) {
@@ -224,20 +199,17 @@ nav .container ul li a:hover {
 
 .form-control {
   font-family: 'Maven Pro', sans-serif;
-  -webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
-          box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
   width: 70%;
   padding: 15px 25px;
   outline: none;
   font-family: "Maven Pro", sans-serif;
-  -webkit-transition: all 0.4s;
   transition: all 0.4s;
   border: none;
 }
 
 .form-control:focus {
-  -webkit-box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12);
-          box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12);
 }
 
 @media screen and (max-width: 768px) {
@@ -261,23 +233,17 @@ nav .container ul li a:hover {
   font-family: "Maven Pro", sans-serif;
   font-weight: 600;
   font-size: 1rem;
-  -webkit-transition: all 0.4s;
   transition: all 0.4s;
   cursor: pointer;
   text-transform: uppercase;
   letter-spacing: 2px;
   display: block;
-  -webkit-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
-          box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
-  position: relative;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
 }
 
 .primary-btn:hover {
-  text-align: right;
-  -webkit-box-shadow: 0 10px 20px rgba(0, 0, 0, 0.13);
-          box-shadow: 0 10px 20px rgba(0, 0, 0, 0.13);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.13);
 }
-
 
 @media screen and (max-width: 768px) {
   .primary-btn {
@@ -287,20 +253,15 @@ nav .container ul li a:hover {
 
 .cards-info-grid {
   margin: 30px 0;
-  display: -ms-grid;
   display: grid;
-  -ms-grid-columns: (1fr);
-      grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   grid-gap: 1rem;
 }
 
 @media screen and (max-width: 840px) {
   .cards-info-grid {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
+    flex-wrap: wrap;
   }
 }
 
@@ -313,9 +274,7 @@ nav .container ul li a:hover {
 .cards-info-grid .card {
   padding: 2rem 4rem;
   text-align: center;
-  -webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
-          box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
-  -webkit-transition: all 0.4s;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
   transition: all 0.4s;
   position: relative;
 }
@@ -340,13 +299,8 @@ nav .container ul li a:hover {
 .graph-section {
   min-height: 100vh;
   height: 130vh;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  flex-direction: column;
 }
 
 @media screen and (max-width: 768px) {
@@ -405,38 +359,29 @@ nav .container ul li a:hover {
 }
 
 .grid {
-  display: -ms-grid;
   display: grid;
-  -ms-grid-columns: (1fr);
-      grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   grid-gap: 1rem;
 }
 
 @media screen and (max-width: 768px) {
   .grid {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
+    flex-wrap: wrap;
   }
 }
 
 .grid .country-data {
   position: relative;
   padding: 1rem;
-  -webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
-          box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
 }
 
 @media screen and (max-width: 768px) {
   .grid .country-data {
-    -webkit-box-flex: 1;
-        -ms-flex: 1 1 50%;
-            flex: 1 1 50%;
+    flex: 1 1 50%;
     margin: 1rem;
-    -webkit-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.098);
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.098);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.098);
   }
 }
 
@@ -451,8 +396,6 @@ nav .container ul li a:hover {
 }
 
 .grid .country-data:nth-child(1) {
-  -ms-grid-row: 1;
-  -ms-grid-row-span: 4;
   grid-row: 1/5;
 }
 
@@ -503,17 +446,14 @@ nav .container ul li a:hover {
 }
 
 .card-grid {
-  display: -ms-grid;
   display: grid;
-  -ms-grid-columns: (1fr)[3];
-      grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   grid-column-gap: 4rem;
 }
 
 @media screen and (max-width: 768px) {
   .card-grid {
-    -ms-grid-columns: (0.3fr)[3];
-        grid-template-columns: repeat(3, 0.3fr);
+    grid-template-columns: repeat(3, 0.3fr);
   }
 }
 
@@ -525,8 +465,7 @@ nav .container ul li a:hover {
 
 .card {
   padding: 2rem;
-  -webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.08), 5px 0px 10px rgba(0, 0, 0, 0.05), 0 20px 20px rgba(0, 0, 0, 0.009);
-          box-shadow: 0 5px 10px rgba(0, 0, 0, 0.08), 5px 0px 10px rgba(0, 0, 0, 0.05), 0 20px 20px rgba(0, 0, 0, 0.009);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.08), 5px 0px 10px rgba(0, 0, 0, 0.05), 0 20px 20px rgba(0, 0, 0, 0.009);
   text-align: center;
   line-height: 1.5;
   color: #666;
@@ -552,8 +491,7 @@ nav .container ul li a:hover {
 footer {
   padding: 2rem 4rem;
   background: #732ec1;
-  -webkit-box-shadow: 0 -1px 10px rgba(0, 0, 0, 0.099);
-          box-shadow: 0 -1px 10px rgba(0, 0, 0, 0.099);
+  box-shadow: 0 -1px 10px rgba(0, 0, 0, 0.099);
 }
 
 footer h1 {
@@ -581,17 +519,6 @@ footer .social-icons {
 
 footer .social-icons > * {
   margin-right: 20px;
-}
-
-@-webkit-keyframes fadeIn {
-  0% {
-    opacity: 0;
-    right: -100px;
-  }
-  100% {
-    opacity: 1;
-    right: 0px;
-  }
 }
 
 @keyframes fadeIn {

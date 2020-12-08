@@ -1,0 +1,35 @@
+.sidebar {
+  height: 50vh;
+  padding: 2rem 1rem;
+
+  ul {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    list-style: none;
+    height: 50vh;
+
+    a {
+      color: #fff;
+    }
+
+    li {
+      padding: 20px;
+      background: rgba(255, 255, 255, 0.11);
+      border-radius: 20px;
+      color: rgba(255, 255, 255, 0.6);
+      text-align: center;
+      font-size: 1.4rem;
+      transition: all 0.4s;
+
+      &:hover {
+        color: #fff;
+      }
+
+      &.active {
+        background: $primary-color;
+        color: #fff;
+      }
+    }
+  }
+}

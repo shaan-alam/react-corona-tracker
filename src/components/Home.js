@@ -1,5 +1,12 @@
 import React from "react";
+import DataPanels from "./DataPanels";
+import Header from "./Header";
 
 export default function Home() {
-  return <h1>Home</h1>;
+  return (
+    <div className="home-wrapper">
+      <Header />
+      <DataPanels />
+    </div>
+  );
 }

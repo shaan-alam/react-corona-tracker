@@ -1,7 +1,7 @@
 import React from "react";
-import LeftSidebar from "./components/Sidebar/";
 import { Switch, Route } from "react-router-dom";
 import Home from "./components/Home";
+import LeftSidebar from "./components/LeftSidebar";
 
 export default function App() {
   return (

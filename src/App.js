@@ -1,34 +1,19 @@
 import React from "react";
-import Nav from "./components/Nav";
-import Showcase from "./components/Showcase";
-import Graph from "./components/Graph";
-import TopAffectedCountries from "./components/TopAffectedCountries";
-import Cards from "./components/Cards";
-import Footer from "./components/Footer";
-import "./assets/css/styles.css";
+import LeftSidebar from "./components/Sidebar/";
+import { Switch, Route } from "react-router-dom";
+import Home from "./components/Home";
 
-import { Context, ContextProvider } from "./DataContext";
-
-function App() {
+export default function App() {
   return (
-    <main>
-      <Nav />
-      <ContextProvider>
-        <Showcase />
-        <Context.Consumer>
-          {value => (
-            <Graph
-              data={value.state.currentCountry.data}
-              name={value.state.currentCountry.name}
-            />
-          )}
-        </Context.Consumer>
-        <TopAffectedCountries />
-      </ContextProvider>
-      <Cards />
-      <Footer />
-    </main>
+    <div className="App">
+      <div className="App__left">
+        <LeftSidebar />
+      </div>
+      <div className="App__right">
+        <Switch>
+          <Route path="/" component={Home} />
+        </Switch>
+      </div>
+    </div>
   );
 }
-
-export default App;

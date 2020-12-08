@@ -1,5 +1,5 @@
 .card-grid-section {
-  
+
   @include tablet {
     min-height: 125vh;
   }
@@ -21,11 +21,11 @@
 }
 
 
-.card-grid { 
+.card-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-column-gap: 4rem;
-  
+
   @include tablet {
     grid-template-columns: repeat(3, 0.3fr);
   }

@@ -8,6 +8,16 @@ header {
   border-radius: 20px;
   width: 100%;
   color: #fff;
+
+  .actions {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    button {
+      margin-left: 1rem;
+    }
+  }
 }
 
 .dropdown {

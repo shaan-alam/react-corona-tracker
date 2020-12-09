@@ -23,7 +23,7 @@ body {
 
 .App {
   height: 100vh;
-  width: 100vw;
+  width: 100%;
   display: flex;
   justify-content: space-between;
 }
@@ -40,3 +40,5 @@ body {
 @import "sidebar";
 @import "data-panels";
 @import "header";
+@import "country-data";
+@import "buttons";

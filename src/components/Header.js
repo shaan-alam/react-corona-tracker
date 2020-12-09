@@ -16,7 +16,10 @@ export default function Header() {
   return (
     <header>
       <h2>Corona Tracker</h2>
-      <Dropdown listItems={list} />
+      <div className="actions">
+        <Dropdown listItems={list} />
+        <button className="primary-btn">Go!</button>
+      </div>
     </header>
   );
 }

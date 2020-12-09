@@ -1,25 +1,14 @@
 .primary-btn {
-  padding: 14px 24px;
-  color: $white-color;
-  background-color: $primary-color;
-  text-decoration: none;
-  outline: none;
   border: none;
-  font-family: $font-stack;
-  font-weight: 600;
-  font-size: 1rem;
+  outline: none;
+  padding: 1rem;
+  color: #fff;
+  background: $primary-color;
+  border-radius: 20px;
   transition: all 0.4s;
   cursor: pointer;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  display: block;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
 
   &:hover {
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.13);
-  }
-
-  @include tablet {
-    margin-top: 1rem;
+    background: darken($primary-color, 5%);
   }
 }

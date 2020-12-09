@@ -1,15 +1,5 @@
-$primary-color: rgb(115, 46, 193);
-$white-color: #fff;
-$red-color: #ff3600;
-$font-stack: 'Maven Pro', sans-serif;
-
-.container {
-  width: 80%;
-  margin: 0 auto;
-}
-
-section {
-  height: 100vh;
-  width: 100%;
-  background-size: cover;
-}
+$primary-color: #ff1f2d;
+$dark-color: #121212;
+$bg-color: rgba(255, 255, 255, 0.11);
+$primary-text-color: rgb(255, 255, 255);
+$secondary-text-color: rgba(255, 255, 255, 0.6);

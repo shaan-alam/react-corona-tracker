@@ -2,6 +2,7 @@ import React from "react";
 import DataPanels from "./DataPanels";
 import Header from "./Header";
 import CountryData from "./CountryData";
+import Graph from "./Graph";
 
 export default function Home() {
   return (
@@ -9,6 +10,7 @@ export default function Home() {
       <Header />
       <DataPanels />
       <CountryData />
+      <Graph />
     </div>
   );
 }

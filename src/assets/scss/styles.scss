@@ -8,6 +8,7 @@
 }
 
 @import "config";
+@import "mediaqueries";
 
 body {
   background: $dark-color;
@@ -26,12 +27,19 @@ body {
   width: 100%;
   display: flex;
   justify-content: space-between;
+
+  @include medium {
+    flex-direction: column;
+  }
 }
 
 .App__left {
   flex: 0.4;
-}
 
+  @include medium {
+    flex: 0.2;
+  }
+}
 .App__right {
   flex: 4;
   padding: 2rem 1rem;
@@ -42,3 +50,4 @@ body {
 @import "header";
 @import "country-data";
 @import "buttons";
+@import "graph";

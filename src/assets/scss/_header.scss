@@ -9,7 +9,25 @@ header {
   width: 100%;
   color: #fff;
 
+  @include medium {
+    justify-content: center;
+    flex-direction: column;
+  }
+
   .actions {
+    @include medium {
+      margin-top: 1rem;
+    }
+
+    @include small {
+      flex-direction: column;
+
+      button {
+        margin-top: 1rem;
+        width: 100%;
+      }
+    }
+
     display: flex;
     justify-content: center;
     align-items: center;
@@ -100,12 +118,9 @@ header {
       border-radius: 20px;
       font-size: 80%;
 
-      &:hover {
-        background: rgba(255, 255, 255, 0.2);
-      }
-
+      &:hover,
       &.selected {
-        background: rgba(255, 255, 255, 0.2);
+        background: #222;
       }
     }
   }

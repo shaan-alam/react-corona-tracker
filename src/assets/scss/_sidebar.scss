@@ -1,9 +1,19 @@
 .sidebar {
   height: 50vh;
-  position: fixed;
   padding: 2rem 1rem;
 
+  @include medium {
+    width: 100%;
+    height: 80px;
+  }
+
   ul {
+    @include medium {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-gap: 1rem;
+    }
+
     display: flex;
     justify-content: space-between;
     flex-direction: column;

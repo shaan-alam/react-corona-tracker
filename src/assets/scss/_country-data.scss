@@ -7,6 +7,11 @@
   margin: 1rem 0;
   border-radius: 20px;
 
+  @include medium {
+    display: block;
+    text-align: center;
+  }
+
   .country_info {
     h1 {
       margin-bottom: 1rem;

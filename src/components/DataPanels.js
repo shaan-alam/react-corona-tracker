@@ -4,7 +4,7 @@ const DataPanel = ({ title, data }) => {
   return (
     <div className="datapanel">
       <div className="icon">
-        <i class="fa fa-line-chart" aria-hidden="true"></i>
+        <i className="fa fa-line-chart" aria-hidden="true"></i>
       </div>
       <div className="data">
         <h3>{title}</h3>

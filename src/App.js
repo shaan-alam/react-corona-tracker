@@ -1,9 +1,16 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Switch, Route } from "react-router-dom";
 import Home from "./components/Home";
 import LeftSidebar from "./components/LeftSidebar";
 
-export default function App() {
+import { connect } from "react-redux";
+import { getCountries } from "./Redux/actions/ActionCreators";
+
+function App({ getCountries }) {
+  useEffect(() => {
+    getCountries();
+  }, []);
+
   return (
     <div className="App">
       <div className="App__left">
@@ -17,3 +24,5 @@ export default function App() {
     </div>
   );
 }
+
+export default connect(null, { getCountries })(App);

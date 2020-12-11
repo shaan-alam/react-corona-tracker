@@ -7,7 +7,7 @@ export default function LeftSidebar() {
       <ul>
         <Link to="/">
           <li className="active">
-            <i class="fa fa-home"></i>
+            <i className="fa fa-home"></i>
           </li>
         </Link>
         <Link to="/map">

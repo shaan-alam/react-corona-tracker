@@ -4,11 +4,12 @@ import Home from "./components/Home";
 import LeftSidebar from "./components/LeftSidebar";
 import Loader from "./components/Loader";
 import { connect } from "react-redux";
-import { getCountries } from "./Redux/actions/ActionCreators";
+import { getCountries, getCountryData } from "./Redux/actions/ActionCreators";
 
-function App({ isLoading, getCountries }) {
+function App({ isLoading, getCountries, getCountryData }) {
   useEffect(() => {
     getCountries();
+    getCountryData("India");
   }, []);
 
   return (
@@ -21,7 +22,6 @@ function App({ isLoading, getCountries }) {
           <Route path="/" component={Home} />
         </Switch>
       </div>
-      {isLoading && <Loader />}
     </div>
   );
 }
@@ -32,4 +32,4 @@ const mapStateToProps = (state) => {
   };
 };
 
-export default connect(mapStateToProps, { getCountries })(App);
+export default connect(mapStateToProps, { getCountries, getCountryData })(App);

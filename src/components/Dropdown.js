@@ -39,7 +39,7 @@ class Dropdown extends React.Component {
 
   render() {
     return (
-      <div className="dropdown">
+      <div className="dropdown" onClick={this.toggle}>
         <p>{this.props.selectedCountry}</p>
         <a
           href="#!"

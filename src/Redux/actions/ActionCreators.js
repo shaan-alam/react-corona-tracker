@@ -26,8 +26,30 @@ export const getCountries = () => (dispatch) => {
     dispatch(setLoading(false));
   });
 };
-//
-// // To get some info about country
-// export const getCountryData = (country) => {
-//
-// }
+
+// To get some info about country
+export const getCountryData = (country) => (dispatch) => {
+  // set loading to true
+  dispatch(setLoading(true));
+
+  axios.get("https://disease.sh/v3/covid-19/countries").then((res) => {
+    const filteredCountry = res.data.filter(
+      (data) => data.country.toLowerCase() === country.toLowerCase()
+    )[0];
+
+    const simpleData = {
+      name: filteredCountry.country,
+      todayCases: filteredCountry.todayCases,
+      todayDeaths: filteredCountry.todayDeaths,
+      todayRecovered: filteredCountry.todayRecovered,
+      active: filteredCountry.active,
+      critical: filteredCountry.critical,
+      cases: filteredCountry.cases,
+      deaths: filteredCountry.deaths,
+      recovered: filteredCountry.recovered,
+      flag: filteredCountry.countryInfo.flag,
+    };
+    dispatch({ type: GET_COUNTRY_DATA, payload: simpleData });
+    dispatch(setLoading(false));
+  });
+};

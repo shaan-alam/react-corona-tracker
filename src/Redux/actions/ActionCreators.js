@@ -53,3 +53,58 @@ export const getCountryData = (country) => (dispatch) => {
     dispatch(setLoading(false));
   });
 };
+
+// To get country's historical data
+export const getHistoricalData = (country) => (dispatch) => {
+  // set loading to true
+  dispatch(setLoading(true));
+
+  axios
+    .get(`https://disease.sh/v3/covid-19/historical/${country}?lastdays=365`)
+    .then(({ data }) => {
+      const caseData = getMonthlyData(data.timeline.cases);
+      const deathsData = getMonthlyData(data.timeline.deaths);
+      const recoveredData = getMonthlyData(data.timeline.recovered);
+
+      dispatch({
+        type: GET_HISTORICAL_DATA,
+        payload: { caseData, deathsData, recoveredData },
+      });
+    });
+};
+
+// Calculate each month's data for each case type
+const getMonthlyData = (data) => {
+  const monthNames = [
+    "Jan",
+    "Feb",
+    "Mar",
+    "Apr",
+    "May",
+    "Jun",
+    "Jul",
+    "Aug",
+    "Sep",
+    "Oct",
+    "Nov",
+    "Dec",
+  ];
+
+  let monthlyData = [];
+
+  for (let i = 0; i < monthNames.length; i++) {
+    let monthDays = Object.keys(data).filter(
+      (date) => date.split("/")[0] == i + 1
+    );
+    let lastDateOfMonth = monthDays[monthDays.length - 1];
+
+    let monthData = {
+      month: monthNames[i],
+      caseTypeData: data[lastDateOfMonth],
+    };
+
+    monthlyData.push(monthData);
+  }
+
+  return monthlyData;
+};

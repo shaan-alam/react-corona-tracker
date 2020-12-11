@@ -60,7 +60,11 @@ export const getHistoricalData = (country) => (dispatch) => {
   dispatch(setLoading(true));
 
   axios
-    .get(`https://disease.sh/v3/covid-19/historical/${country}?lastdays=365`)
+    .get(
+      `https://disease.sh/v3/covid-19/historical/${encodeURI(
+        country
+      )}?lastdays=365`
+    )
     .then(({ data }) => {
       const caseData = getMonthlyData(data.timeline.cases);
       const deathsData = getMonthlyData(data.timeline.deaths);

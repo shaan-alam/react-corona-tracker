@@ -1,70 +1,73 @@
 import React from "react";
 import { Line } from "react-chartjs-2";
+import { connect } from "react-redux";
 
-const data = {
-  labels: ["January", "February", "March", "April", "May", "June", "July"],
-  datasets: [
-    {
-      label: "My First dataset",
-      fill: false,
-      lineTension: 0.1,
-      backgroundColor: "rgba(75,192,192,0.4)",
-      borderColor: "#ff1f2d",
-      borderCapStyle: "butt",
-      borderDash: [],
-      borderDashOffset: 0.0,
-      borderJoinStyle: "miter",
-      pointBorderColor: "#ff1f2d",
-      pointBackgroundColor: "#fff",
-      pointBorderWidth: 2,
-      pointHoverRadius: 6,
-      pointHoverBorderWidth: 2,
-      pointRadius: 5,
-      pointHitRadius: 10,
-      data: [65, 59, 80, 81, 56, 55, 40],
-    },
-    {
-      label: "My First dataset",
-      fill: false,
-      lineTension: 0.1,
-      backgroundColor: "rgba(75,192,192,0.4)",
-      borderColor: "#ff1f2d",
-      borderCapStyle: "butt",
-      borderDash: [],
-      borderDashOffset: 0.0,
-      borderJoinStyle: "miter",
-      pointBorderColor: "#ff1f2d",
-      pointBackgroundColor: "#fff",
-      pointBorderWidth: 2,
-      pointHoverRadius: 6,
-      pointHoverBorderWidth: 2,
-      pointRadius: 5,
-      pointHitRadius: 10,
-      data: [45, 68, 98, 78, 12, 0, 0.15, 56, 78],
-    },
-    {
-      label: "My First dataset",
-      fill: false,
-      lineTension: 0.1,
-      backgroundColor: "rgba(75,192,192,0.4)",
-      borderColor: "#ff1f2d",
-      borderCapStyle: "butt",
-      borderDash: [],
-      borderDashOffset: 0.0,
-      borderJoinStyle: "miter",
-      pointBorderColor: "#ff1f2d",
-      pointBackgroundColor: "#fff",
-      pointBorderWidth: 2,
-      pointHoverRadius: 6,
-      pointHoverBorderWidth: 2,
-      pointRadius: 5,
-      pointHitRadius: 10,
-      data: [165, 90, 45, 81, 45, 51, 42],
-    },
-  ],
-};
+function Graph({ cases, deaths, recovered }) {
+  // Chart configuration
 
-export default function Graph() {
+  const data = {
+    labels: cases.map((data) => data.month),
+    datasets: [
+      {
+        label: "Cases",
+        fill: false,
+        lineTension: 0.1,
+        backgroundColor: "rgba(75,192,192,0.4)",
+        borderColor: "#ff1f2d",
+        borderCapStyle: "butt",
+        borderDash: [],
+        borderDashOffset: 0.0,
+        borderJoinStyle: "miter",
+        pointBorderColor: "#ff1f2d",
+        pointBackgroundColor: "#fff",
+        pointBorderWidth: 2,
+        pointHoverRadius: 6,
+        pointHoverBorderWidth: 2,
+        pointRadius: 5,
+        pointHitRadius: 10,
+        data: cases.map((data) => data.caseTypeData),
+      },
+      {
+        label: "Deaths",
+        fill: false,
+        lineTension: 0.1,
+        backgroundColor: "rgba(75,192,192,0.4)",
+        borderColor: "#ff1f2d",
+        borderCapStyle: "butt",
+        borderDash: [],
+        borderDashOffset: 0.0,
+        borderJoinStyle: "miter",
+        pointBorderColor: "#ff1f2d",
+        pointBackgroundColor: "#fff",
+        pointBorderWidth: 2,
+        pointHoverRadius: 6,
+        pointHoverBorderWidth: 2,
+        pointRadius: 5,
+        pointHitRadius: 10,
+        data: deaths.map((data) => data.caseTypeData),
+      },
+      {
+        label: "Recovered",
+        fill: false,
+        lineTension: 0.1,
+        backgroundColor: "rgba(75,192,192,0.4)",
+        borderColor: "#ff1f2d",
+        borderCapStyle: "butt",
+        borderDash: [],
+        borderDashOffset: 0.0,
+        borderJoinStyle: "miter",
+        pointBorderColor: "#ff1f2d",
+        pointBackgroundColor: "#fff",
+        pointBorderWidth: 2,
+        pointHoverRadius: 6,
+        pointHoverBorderWidth: 2,
+        pointRadius: 5,
+        pointHitRadius: 10,
+        data: recovered.map((data) => data.caseTypeData),
+      },
+    ],
+  };
+
   return (
     <div className="graph_container">
       <Line
@@ -85,3 +88,13 @@ export default function Graph() {
     </div>
   );
 }
+
+const mapStateToProps = (state) => {
+  return {
+    cases: state.historicalData.caseData,
+    deaths: state.historicalData.deathsData,
+    recovered: state.historicalData.recoveredData,
+  };
+};
+
+export default connect(mapStateToProps)(Graph);

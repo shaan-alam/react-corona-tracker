@@ -1,37 +1,57 @@
 import React from "react";
+import { connect } from "react-redux";
 
-export default function CountryData() {
+function CountryData({
+  name,
+  todayCases,
+  todayDeaths,
+  todayRecovered,
+  active,
+  critical,
+  flag,
+}) {
   return (
     <div className="country_data">
       <div className="country_info">
         <h1>India's Info</h1>
         <ul>
           <li>
-            <strong>Country Name</strong> - India
+            <strong>Country Name</strong> - {name}
           </li>
           <li>
-            <strong>Today's Cases</strong> - 174
+            <strong>Today's Cases</strong> - {todayCases}
           </li>
           <li>
-            <strong>Today's Death</strong> - 13
+            <strong>Today's Death</strong> - {todayDeaths}
           </li>
           <li>
-            <strong>Today's Recovered</strong> - 117
+            <strong>Today's Recovered</strong> - {todayRecovered}
           </li>
           <li>
-            <strong>Active</strong> - 11714
+            <strong>Active</strong> - {active}
           </li>
           <li>
-            <strong>Critical</strong> - 1171
+            <strong>Critical</strong> - {critical}
           </li>
         </ul>
       </div>
       <div className="country_icon">
-        <img
-          src="https://disease.sh/assets/img/flags/in.png"
-          alt="Country Flag"
-        />
+        <img src={flag} alt="Country Flag" />
       </div>
     </div>
   );
 }
+
+const mapStateToProps = (state) => {
+  return {
+    name: state.countryData.name,
+    todayCases: state.countryData.todayCases,
+    todayDeaths: state.countryData.todayDeaths,
+    todayRecovered: state.countryData.todayRecovered,
+    active: state.countryData.active,
+    critical: state.countryData.critical,
+    flag: state.countryData.flag,
+  };
+};
+
+export default connect(mapStateToProps)(CountryData);

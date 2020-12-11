@@ -8,7 +8,6 @@ export const setLoading = (isLoading) => {
 
 //  Get all the countries
 export const getCountries = () => (dispatch) => {
-  console.log("reached here");
   // First set loading to true
   dispatch(setLoading(true));
 
@@ -17,5 +16,8 @@ export const getCountries = () => (dispatch) => {
       type: GET_COUNTRIES,
       payload: res.data.map((item) => item.country),
     });
+
+    // disable loading
+    dispatch(setLoading(false));
   });
 };

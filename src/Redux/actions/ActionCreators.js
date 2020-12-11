@@ -1,4 +1,9 @@
-import { SET_IS_LOADING, GET_COUNTRIES } from "./ActionTypes";
+import {
+  SET_IS_LOADING,
+  GET_COUNTRIES,
+  GET_COUNTRY_DATA,
+  GET_HISTORICAL_DATA,
+} from "./ActionTypes";
 import axios from "axios";
 
 // Set loading state
@@ -21,3 +26,8 @@ export const getCountries = () => (dispatch) => {
     dispatch(setLoading(false));
   });
 };
+//
+// // To get some info about country
+// export const getCountryData = (country) => {
+//
+// }

@@ -2,11 +2,11 @@ import React, { useEffect } from "react";
 import { Switch, Route } from "react-router-dom";
 import Home from "./components/Home";
 import LeftSidebar from "./components/LeftSidebar";
-
+import Loader from "./components/Loader";
 import { connect } from "react-redux";
 import { getCountries } from "./Redux/actions/ActionCreators";
 
-function App({ getCountries }) {
+function App({ isLoading, getCountries }) {
   useEffect(() => {
     getCountries();
   }, []);
@@ -21,8 +21,15 @@ function App({ getCountries }) {
           <Route path="/" component={Home} />
         </Switch>
       </div>
+      {isLoading && <Loader />}
     </div>
   );
 }
 
-export default connect(null, { getCountries })(App);
+const mapStateToProps = (state) => {
+  return {
+    isLoading: state.isLoading,
+  };
+};
+
+export default connect(mapStateToProps, { getCountries })(App);

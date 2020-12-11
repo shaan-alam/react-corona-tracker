@@ -4,12 +4,17 @@ import Home from "./components/Home";
 import LeftSidebar from "./components/LeftSidebar";
 import Loader from "./components/Loader";
 import { connect } from "react-redux";
-import { getCountries, getCountryData } from "./Redux/actions/ActionCreators";
+import {
+  getCountries,
+  getCountryData,
+  getHistoricalData,
+} from "./Redux/actions/ActionCreators";
 
-function App({ isLoading, getCountries, getCountryData }) {
+function App({ isLoading, getCountries, getCountryData, getHistoricalData }) {
   useEffect(() => {
     getCountries();
     getCountryData("India");
+    getHistoricalData("India");
   }, []);
 
   return (
@@ -32,4 +37,8 @@ const mapStateToProps = (state) => {
   };
 };
 
-export default connect(mapStateToProps, { getCountries, getCountryData })(App);
+export default connect(mapStateToProps, {
+  getCountries,
+  getCountryData,
+  getHistoricalData,
+})(App);

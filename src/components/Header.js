@@ -2,15 +2,22 @@ import React, { useState } from "react";
 import Dropdown from "./Dropdown";
 import Loader from "./Loader";
 import { connect } from "react-redux";
-import { getCountryData } from "../Redux/actions/ActionCreators";
+import {
+  getCountryData,
+  getHistoricalData,
+} from "../Redux/actions/ActionCreators";
 
-function Header({ isLoading, getCountryData, countries }) {
+function Header({ isLoading, getCountryData, countries, getHistoricalData }) {
   // selected country state
   const [selectedCountry, setSelectedCountry] = useState("India");
 
   // search selected country Data
   const searchCountryData = (country) => {
+    // Get country data
     getCountryData(country);
+
+    // Get country's historical data
+    getHistoricalData(country);
   };
 
   return (
@@ -41,4 +48,6 @@ const mapStateToProps = (state) => {
   };
 };
 
-export default connect(mapStateToProps, { getCountryData })(Header);
+export default connect(mapStateToProps, { getCountryData, getHistoricalData })(
+  Header
+);

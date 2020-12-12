@@ -2,7 +2,7 @@ import React from "react";
 import { Line } from "react-chartjs-2";
 import { connect } from "react-redux";
 
-function Graph({ cases, deaths, recovered }) {
+function Graph({ cases, deaths, recovered, countryName }) {
   // Chart configuration
 
   const data = {
@@ -76,11 +76,11 @@ function Graph({ cases, deaths, recovered }) {
           responsive: true,
           maintainAspectRatio: false,
           legend: {
-            position: "top",
+            display: false,
           },
           title: {
             display: true,
-            text: `India's  data`,
+            text: `${countryName}'s  data`,
             fontSize: 25,
           },
         }}
@@ -94,6 +94,7 @@ const mapStateToProps = (state) => {
     cases: state.historicalData.caseData,
     deaths: state.historicalData.deathsData,
     recovered: state.historicalData.recoveredData,
+    countryName: state.countryData.name,
   };
 };
 

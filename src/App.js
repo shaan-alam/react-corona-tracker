@@ -1,14 +1,14 @@
 import React, { useEffect } from "react";
 import { Switch, Route } from "react-router-dom";
-import Home from "./components/Home";
+import Home from "./components/Home/Home";
 import LeftSidebar from "./components/LeftSidebar";
-import Loader from "./components/Loader";
 import { connect } from "react-redux";
 import {
   getCountries,
   getCountryData,
   getHistoricalData,
 } from "./Redux/actions/ActionCreators";
+import Map from "./components/Map";
 
 function App({ isLoading, getCountries, getCountryData, getHistoricalData }) {
   useEffect(() => {
@@ -24,7 +24,8 @@ function App({ isLoading, getCountries, getCountryData, getHistoricalData }) {
       </div>
       <div className="App__right">
         <Switch>
-          <Route path="/" component={Home} />
+          <Route path="/" component={Home} exact />
+          <Route path="/map" component={Map} />
         </Switch>
       </div>
     </div>
@@ -42,3 +43,5 @@ export default connect(mapStateToProps, {
   getCountryData,
   getHistoricalData,
 })(App);
+
+// <Route path="/map" component={Map} />

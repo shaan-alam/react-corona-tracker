@@ -5,7 +5,7 @@ import { connect } from "react-redux";
 import {
   getCountryData,
   getHistoricalData,
-} from "../Redux/actions/ActionCreators";
+} from "../../Redux/actions/ActionCreators";
 
 function Header({ isLoading, getCountryData, countries, getHistoricalData }) {
   // selected country state

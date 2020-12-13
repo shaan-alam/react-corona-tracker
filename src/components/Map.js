@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import ReactMapGL, { Marker, Popup } from "react-map-gl";
+import { motion } from "framer-motion";
 
 export default function Map() {
   const [countries, setCountries] = useState([]);
@@ -36,7 +37,12 @@ export default function Map() {
   }, []);
 
   return (
-    <div className="map_container">
+    <motion.div
+      className="map_container"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+    >
       <ReactMapGL
         {...viewport}
         mapStyle="mapbox://styles/shaanalam/ckili38cz0c1f18se6ym09vrf"
@@ -79,6 +85,6 @@ export default function Map() {
           </Popup>
         )}
       </ReactMapGL>
-    </div>
+    </motion.div>
   );
 }

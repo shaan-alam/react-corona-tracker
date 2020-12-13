@@ -5,6 +5,7 @@ import {
   GET_HISTORICAL_DATA,
 } from "./ActionTypes";
 import axios from "axios";
+import { getErrors, clearErrors } from "./ErrorActions";
 
 // Set loading state
 export const setLoading = (isLoading) => {
@@ -16,46 +17,52 @@ export const getCountries = () => (dispatch) => {
   // First set loading to true
   dispatch(setLoading(true));
 
-  axios.get("https://disease.sh/v3/covid-19/countries").then((res) => {
-    dispatch({
-      type: GET_COUNTRIES,
-      payload: res.data.map((item) => item.country),
-    });
+  axios
+    .get("https://disease.sh/v3/covid-19/countries")
+    .then((res) => {
+      dispatch({
+        type: GET_COUNTRIES,
+        payload: res.data.map((item) => item.country),
+      });
 
-    // disable loading
-    dispatch(setLoading(false));
-  });
+      // disable loading
+      dispatch(setLoading(false));
+    })
+    .catch((err) => catchErrors(err, dispatch));
 };
 
 // To get some info about country
-export const getCountryData = (country) => (dispatch) => {
+export const getCountryData = (country = "India") => (dispatch) => {
   // set loading to true
   dispatch(setLoading(true));
 
-  axios.get("https://disease.sh/v3/covid-19/countries").then((res) => {
-    const filteredCountry = res.data.filter(
-      (data) => data.country.toLowerCase() === country.toLowerCase()
-    )[0];
+  axios
+    .get("https://disease.sh/v3/covid-19/countries")
+    .then((res) => {
+      const filteredCountry = res.data.filter(
+        (data) => data.country.toLowerCase() === country.toLowerCase()
+      )[0];
 
-    const simpleData = {
-      name: filteredCountry.country,
-      todayCases: filteredCountry.todayCases,
-      todayDeaths: filteredCountry.todayDeaths,
-      todayRecovered: filteredCountry.todayRecovered,
-      active: filteredCountry.active,
-      critical: filteredCountry.critical,
-      cases: filteredCountry.cases,
-      deaths: filteredCountry.deaths,
-      recovered: filteredCountry.recovered,
-      flag: filteredCountry.countryInfo.flag,
-    };
-    dispatch({ type: GET_COUNTRY_DATA, payload: simpleData });
-    dispatch(setLoading(false));
-  });
+      const simpleData = {
+        name: filteredCountry.country,
+        todayCases: filteredCountry.todayCases,
+        todayDeaths: filteredCountry.todayDeaths,
+        todayRecovered: filteredCountry.todayRecovered,
+        active: filteredCountry.active,
+        critical: filteredCountry.critical,
+        cases: filteredCountry.cases,
+        deaths: filteredCountry.deaths,
+        recovered: filteredCountry.recovered,
+        flag: filteredCountry.countryInfo.flag,
+      };
+      dispatch({ type: GET_COUNTRY_DATA, payload: simpleData });
+      dispatch(setLoading(false));
+    })
+    .catch((err) => catchErrors(err, dispatch));
 };
 
 // To get country's historical data
-export const getHistoricalData = (country) => (dispatch) => {
+export const getHistoricalData = (country = "India") => (dispatch) => {
   // set loading to true
   dispatch(setLoading(true));
 
@@ -74,7 +81,8 @@ export const getHistoricalData = (country) => (dispatch) => {
         type: GET_HISTORICAL_DATA,
         payload: { caseData, deathsData, recoveredData },
       });
-    });
+    })
+    .catch((err) => catchErrors(err, dispatch));
 };
 
 // Calculate each month's data for each case type
@@ -111,4 +119,23 @@ const getMonthlyData = (data) => {
   }
 
   return monthlyData;
+};
+
+// To catch fetching data errors
+const catchErrors = (err, dispatch) => {
+  if (err.response) {
+    dispatch(
+      getErrors({
+        id: "SOMETHING_WENT_WRONG",
+        err: "Oops..Something went Wrong",
+      })
+    );
+  } else if (err.request && !err.response) {
+    dispatch(
+      getErrors({
+        id: "NETWORK_ERROR",
+        err: "Network Error...Please try again!",
+      })
+    );
+  }
 };

@@ -4,6 +4,7 @@ import countries from "./countries";
 import countryData from "./countryData";
 import historicalData from "./historicalData";
 import error from "./error";
+import topAffectedCountries from "./topAffectedCountries";
 
 export default combineReducers({
   isLoading,
@@ -11,4 +12,5 @@ export default combineReducers({
   countryData,
   historicalData,
   error,
+  topAffectedCountries,
 });

@@ -3,9 +3,10 @@ import {
   GET_COUNTRIES,
   GET_COUNTRY_DATA,
   GET_HISTORICAL_DATA,
+  GET_TOP_AFFECTED_COUNTRIES,
 } from "./ActionTypes";
 import axios from "axios";
-import { getErrors, clearErrors } from "./ErrorActions";
+import { getErrors } from "./ErrorActions";
 
 // Set loading state
 export const setLoading = (isLoading) => {
@@ -81,6 +82,7 @@ export const getHistoricalData = (country = "India") => (dispatch) => {
         type: GET_HISTORICAL_DATA,
         payload: { caseData, deathsData, recoveredData },
       });
+      dispatch(setLoading(false));
     })
     .catch((err) => catchErrors(err, dispatch));
 };
@@ -120,6 +122,21 @@ const getMonthlyData = (data) => {
 
   return monthlyData;
 };
+
+// Get all the top affected countries
+export const getTopAffectedCountries = (countries) => (dispatch) => {
+  // set loading to true
+  dispatch(setLoading(true));
+
+  axios.get("https://disease.sh/v3/covid-19/countries").then((res) => {
+    const sortedData = sortData(res.data);
+    dispatch({ type: GET_TOP_AFFECTED_COUNTRIES, payload: sortedData });
+    dispatch(setLoading(false));
+  });
+};
+
+// sort the affected countries data
+const sortData = (countries) => countries.sort((a, b) => a.cases < b.cases);
 
 // To catch fetching data errors
 const catchErrors = (err, dispatch) => {

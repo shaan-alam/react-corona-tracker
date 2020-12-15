@@ -9,22 +9,38 @@ function LeftSidebar({ history }) {
   return (
     <div className="sidebar">
       <ul>
-        <Link to="/" onClick={() => setSelectedLink("")}>
-          <li className={`${selectedLink === "" ? "active" : ""}`}>
+        <Link
+          to={process.env.PUBLIC_URL + "/"}
+          onClick={() => setSelectedLink("")}
+        >
+          <li
+            className={`${
+              selectedLink === "react-corona-tracker/" ? "active" : ""
+            }`}
+          >
             <i className="fa fa-home"></i>
           </li>
         </Link>
-        <Link to="/map" onClick={() => setSelectedLink("map")}>
+        <Link
+          to={process.env.PUBLIC_URL + "/map"}
+          onClick={() => setSelectedLink("map")}
+        >
           <li className={`${selectedLink === "map" ? "active" : ""}`}>
             <i className="fa fa-map-marker"></i>
           </li>
         </Link>
-        <Link to="/countries" onClick={() => setSelectedLink("globe")}>
+        <Link
+          to={process.env.PUBLIC_URL + "/countries"}
+          onClick={() => setSelectedLink("globe")}
+        >
           <li className={`${selectedLink === "globe" ? "active" : ""}`}>
             <i className="fa fa-globe"></i>
           </li>
         </Link>
-        <Link to="/info" onClick={() => setSelectedLink("info")}>
+        <Link
+          to={process.env.PUBLIC_URL + "/info"}
+          onClick={() => setSelectedLink("info")}
+        >
           <li className={`${selectedLink === "info" ? "active" : ""}`}>
             <i className="fa fa-info"></i>
           </li>

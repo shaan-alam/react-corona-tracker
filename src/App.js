@@ -35,10 +35,13 @@ function App({
         </div>
         <div className="App__right">
           <Switch>
-            <Route path="/" component={Home} exact />
-            <Route path="/map" component={Map} />
-            <Route path="/countries" component={TopAffectedCountry} />
-            <Route path="/info" component={Info} />
+            <Route path={process.env.PUBLIC_URL + "/"} component={Home} exact />
+            <Route path={process.env.PUBLIC_URL + "/map"} component={Map} />
+            <Route
+              path={process.env.PUBLIC_URL + "/countries"}
+              component={TopAffectedCountry}
+            />
+            <Route path={process.env.PUBLIC_URL + "/info"} component={Info} />
           </Switch>
           <Footer />
         </div>

@@ -1,15 +1,9 @@
 import React from "react";
 import { connect } from "react-redux";
-import { motion } from "framer-motion";
 
 function TopAffectedCountry({ topAffectedCountries }) {
   return (
-    <motion.div
-      className="top_affected_countries"
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      exit={{ opacity: 0 }}
-    >
+    <div className="top_affected_countries">
       <div className="countries">
         {topAffectedCountries.map((data, index) => (
           <div className="country" key={data.country}>
@@ -24,7 +18,7 @@ function TopAffectedCountry({ topAffectedCountries }) {
           </div>
         ))}
       </div>
-    </motion.div>
+    </div>
   );
 }
 

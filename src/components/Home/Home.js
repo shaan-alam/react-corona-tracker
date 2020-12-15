@@ -3,23 +3,17 @@ import DataPanels from "./DataPanels";
 import Header from "./Header";
 import CountryData from "./CountryData";
 import Graph from "./Graph";
-import { motion } from "framer-motion";
 import Modal from "../Modal";
 
 function Home() {
   return (
-    <motion.div
-      className="home-wrapper"
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      exit={{ opacity: 0 }}
-    >
+    <div className="home-wrapper">
       <Modal />
       <Header />
       <DataPanels />
       <CountryData />
       <Graph />
-    </motion.div>
+    </div>
   );
 }
 

@@ -13,7 +13,7 @@ function CountryData({
   return (
     <div className="country_data">
       <div className="country_info">
-        <h1>India's Info</h1>
+        <h1>{name}'s Info</h1>
         <ul>
           <li>
             <strong>Country Name</strong> - {name}

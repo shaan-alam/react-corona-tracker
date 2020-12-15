@@ -42,12 +42,7 @@ function Modal({
   return ReactDOM.createPortal(
     error.isError ? (
       <div className="modal-bg">
-        <motion.div
-          className="modal-content"
-          initial={{ scale: 0 }}
-          animate={{ scale: 1 }}
-          exit={{ scale: 0 }}
-        >
+        <div className="modal-content">
           <a href="" className="close-modal" onClick={closeModal}>
             &times;
           </a>
@@ -56,7 +51,7 @@ function Modal({
           <button className="primary-btn" onClick={retryFetching}>
             Retry
           </button>
-        </motion.div>
+        </div>
       </div>
     ) : null,
     document.querySelector("#modal")

@@ -20,7 +20,6 @@ class Dropdown extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      error: "",
       countries: [],
       active: false,
     };
@@ -49,7 +48,6 @@ class Dropdown extends React.Component {
           <i className="fa fa-chevron-down" aria-hidden="true"></i>
         </a>
         <ul className={this.state.active ? "active" : ""}>
-          {this.state.error && <p>{this.state.error}</p>}
           {this.props.countries.map((item) => (
             <li
               key={item}

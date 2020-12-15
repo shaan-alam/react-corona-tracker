@@ -7,9 +7,15 @@ import {
   getHistoricalData,
 } from "../../Redux/actions/ActionCreators";
 
-function Header({ isLoading, getCountryData, countries, getHistoricalData }) {
+function Header({
+  isLoading,
+  getCountryData,
+  countries,
+  getHistoricalData,
+  name,
+}) {
   // selected country state
-  const [selectedCountry, setSelectedCountry] = useState("India");
+  const [selectedCountry, setSelectedCountry] = useState(name);
 
   // search selected country Data
   const searchCountryData = (country) => {
@@ -45,6 +51,7 @@ const mapStateToProps = (state) => {
   return {
     isLoading: state.isLoading,
     countries: state.countries,
+    name: state.countryData.name,
   };
 };
 

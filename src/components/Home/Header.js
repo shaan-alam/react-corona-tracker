@@ -5,6 +5,7 @@ import { connect } from "react-redux";
 import {
   getCountryData,
   getHistoricalData,
+  setSelectedCountry,
 } from "../../Redux/actions/ActionCreators";
 
 function Header({
@@ -12,11 +13,9 @@ function Header({
   getCountryData,
   countries,
   getHistoricalData,
-  name,
+  selectedCountry,
+  setSelectedCountry,
 }) {
-  // selected country state
-  const [selectedCountry, setSelectedCountry] = useState(name);
-
   // search selected country Data
   const searchCountryData = (country) => {
     // Get country data
@@ -51,10 +50,12 @@ const mapStateToProps = (state) => {
   return {
     isLoading: state.isLoading,
     countries: state.countries,
-    name: state.countryData.name,
+    selectedCountry: state.selectedCountry,
   };
 };
 
-export default connect(mapStateToProps, { getCountryData, getHistoricalData })(
-  Header
-);
+export default connect(mapStateToProps, {
+  getCountryData,
+  getHistoricalData,
+  setSelectedCountry,
+})(Header);

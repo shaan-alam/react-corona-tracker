@@ -15,7 +15,11 @@ function LeftSidebar({ history }) {
         >
           <li
             className={`${
-              selectedLink === "react-corona-tracker/" ? "active" : ""
+              selectedLink === "" ||
+              selectedLink === "react-corona-tracker/" ||
+              selectedLink === "react-corona-tracker"
+                ? "active"
+                : ""
             }`}
           >
             <i className="fa fa-home"></i>

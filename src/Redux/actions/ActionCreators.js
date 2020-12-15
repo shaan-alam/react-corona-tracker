@@ -4,6 +4,7 @@ import {
   GET_COUNTRY_DATA,
   GET_HISTORICAL_DATA,
   GET_TOP_AFFECTED_COUNTRIES,
+  SET_SELECTED_COUNTRY,
 } from "./ActionTypes";
 import axios from "axios";
 import { getErrors } from "./ErrorActions";
@@ -11,6 +12,14 @@ import { getErrors } from "./ErrorActions";
 // Set loading state
 export const setLoading = (isLoading) => {
   return { type: SET_IS_LOADING, payload: isLoading };
+};
+
+// To set current country
+export const setSelectedCountry = (country) => {
+  return {
+    type: SET_SELECTED_COUNTRY,
+    payload: country,
+  };
 };
 
 //  Get all the countries

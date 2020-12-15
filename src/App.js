@@ -12,6 +12,7 @@ import Map from "./components/Map";
 import Footer from "./components/Footer";
 import { getTopAffectedCountries } from "./Redux/actions/ActionCreators";
 import TopAffectedCountry from "./components/TopAffectedCountry";
+import Info from "./components/Info";
 
 function App({
   getCountries,
@@ -37,6 +38,7 @@ function App({
             <Route path="/" component={Home} exact />
             <Route path="/map" component={Map} />
             <Route path="/countries" component={TopAffectedCountry} />
+            <Route path="/info" component={Info} />
           </Switch>
           <Footer />
         </div>

@@ -2,7 +2,6 @@ import React from "react";
 import ReactDOM from "react-dom";
 import { connect } from "react-redux";
 import { clearErrors } from "../Redux/actions/ErrorActions";
-import { motion } from "framer-motion";
 import {
   getCountries,
   getCountryData,

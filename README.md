@@ -18,3 +18,7 @@ npm start
 ![capture (2)](https://user-images.githubusercontent.com/48273777/102573321-3ccab100-4114-11eb-9a54-5c4a6bcb6a88.png)
 
 ![capture (3)](https://user-images.githubusercontent.com/48273777/102573351-510eae00-4114-11eb-8103-04e36a19969c.png)
+
+
+### Live Demo - 
+[Clik here](https://codeshaan.github.io/react-corona-tracker/s) for Live Demo.

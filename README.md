@@ -21,4 +21,4 @@ npm start
 
 
 ### Live Demo - 
-[Clik here](https://codeshaan.github.io/react-corona-tracker/s) for Live Demo.
+[Click here](https://codeshaan.github.io/react-corona-tracker/) for Live Demo.

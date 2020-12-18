@@ -4,6 +4,7 @@ import { connect } from "react-redux";
 function TopAffectedCountry({ topAffectedCountries }) {
   return (
     <div className="top_affected_countries">
+      <h1>Most Affected countries</h1>
       <div className="countries">
         {topAffectedCountries.map((data, index) => (
           <div className="country" key={data.country}>

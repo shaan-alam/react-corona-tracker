@@ -1,8 +1,18 @@
-.top_affected_countries .countries {
+.top_affected_countries {
+
+  h1 {
+    text-align: center;
+    color: #fff;
+    margin-bottom: 1rem;
+  }
+
+
+ .countries {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   grid-gap: 1rem;
 
+ 
   .country {
     transition: all 0.4s;
     background: $bg-color;
@@ -33,4 +43,5 @@
       width: 70%;
     }
   }
+}
 }

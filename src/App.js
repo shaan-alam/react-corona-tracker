@@ -43,7 +43,7 @@ function App({
             />
             <Route path={process.env.PUBLIC_URL + "/info"} component={Info} />
           </Switch>
-          <Footer />
+          <Footer />          
         </div>
       </div>
     </>

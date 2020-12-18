@@ -138,14 +138,14 @@ export const getTopAffectedCountries = (countries) => (dispatch) => {
   dispatch(setLoading(true));
 
   axios.get("https://disease.sh/v3/covid-19/countries").then((res) => {
-    const sortedData = sortData(res.data);
+    const sortedData = sortData(res.data).slice(0, 50);
     dispatch({ type: GET_TOP_AFFECTED_COUNTRIES, payload: sortedData });
     dispatch(setLoading(false));
   });
 };
 
 // sort the affected countries data
-const sortData = (countries) => countries.sort((a, b) => a.cases < b.cases);
+const sortData = (countries) => countries.sort((a, b) => b.cases - a.cases);
 
 // To catch fetching data errors
 const catchErrors = (err, dispatch) => {
